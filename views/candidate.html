@@ -1,0 +1,43 @@
+<div class="col-md-8 col-md-offset-2">
+	<a ng-click="goTo('/candidates')" class="clickable">
+		<i class="glyphicon glyphicon-arrow-left"></i>
+		Return to Candidates List Page
+	</a>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				Candidate Profile
+			</h3>
+		</div>
+		<div class="panel panel-body">
+			<table class="table table-bordered">
+				<tbody>
+				<tr>
+					<td>First Name:</td>
+					<td>{{candidate.firstName}}</td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td>{{candidate.lastName}}</td>
+				</tr>
+				<tr>
+					<td>Skills:</td>
+					<td>{{candidate.skills}}</td>
+				</tr>
+				<tr>
+					<td>Status:</td>
+					<td>{{candidate.status}}</td>
+				</tr>
+				<tr>
+					<td>Staffing Agency Notes:</td>
+					<td>{{candidate.notes === '' ? 'None' : candidate.notes}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

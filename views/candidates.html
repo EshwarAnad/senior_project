@@ -1,0 +1,27 @@
+<div class="h1">{{title}}</div>
+
+<div class="well-lg">
+	Search
+	
+	<div class="form-group">
+		<input class="form-control" type="text" ng-model="searchTerm">
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Employment Status</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr ng-repeat="candidate in candidates" ng-click="goToCandidate(candidate)" class="clickable">
+		<td>{{candidate.firstName}}</td>
+		<td>{{candidate.lastName}}</td>
+		<td>{{candidate.status}}</td>
+	</tr>
+	</tbody>
+</table>
