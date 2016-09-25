@@ -1,6 +1,6 @@
 angular.module('tps').service('SessionService', sessionService);
 
-function sessionService(){
+function sessionService($rootScope){
     this.create = function(user){
         this.id = user.id;
         this.username = user.username;
@@ -10,6 +10,7 @@ function sessionService(){
         this.hiringCompany = user.hiringCompany;
         this.emailAddress = user.emailAddress;
         this.active = true;
+        $rootScope.session = this;
     };
 
     this.destroy = function() {
@@ -21,5 +22,6 @@ function sessionService(){
         this.hiringCompany = null;
         this.emailAddress = null;
         this.active = false;
+        $rootScope.session = null;
     }
 }

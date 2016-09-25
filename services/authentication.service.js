@@ -34,7 +34,7 @@ function authenticationService(SessionService, UserService){
     }
 
     function logout(){
-
+        SessionService.destroy();
     }
 
     return authenticationService;

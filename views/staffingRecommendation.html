@@ -13,6 +13,15 @@
 			</h1>
 		</div>
 		<div class="panel panel-body">
+			<div class="well-lg">
+				<div class="btn-group">
+					<button class="btn btn-primary" ng-show="session.type === 'admin'"
+					        ng-click="staffingRecommendation.active = !staffingRecommendation.active">
+						{{staffingRecommendation.active ? 'Deactivate' : 'Activate' }}
+					</button>
+				</div>
+			</div>
+			
 			<table class="table table-bordered">
 				<tbody>
 				<tr>
@@ -25,7 +34,9 @@
 				</tr>
 				<tr>
 					<td>Active:</td>
-					<td>{{staffingRecommendation.active ? 'True': 'False'}}</td>
+					<td>
+						{{staffingRecommendation.active ? 'True': 'False'}}
+					</td>
 				</tr>
 				<tr>
 					<td>Created By:</td>

@@ -69,6 +69,16 @@
 					<ul class="dropdown-menu" ng-if="session.active">
 						<li class="clickable"><a>Profile</a></li>
 						<li role="separator" class="divider"></li>
+						<li class="clickable" ng-click="loginAsAdmin()" ng-hide="session.type === 'admin'">
+							<a>Switch to Admin User Session</a>
+						</li>
+						<li class="clickable" ng-click="loginAsStaffUser()" ng-hide="session.type === 'staffing'">
+							<a>Switch to Staff User Session</a>
+						</li>
+						<li class="clickable" ng-click="loginAsHiringUser()" ng-hide="session.type === 'hiring'">
+							<a>Switch to Hiring User Session</a>
+						</li>
+						<li role="separator" class="divider"></li>
 						<li class="clickable">
 							<a ng-click="logout()">
 								<i class="glyphicon glyphicon-log-out"></i>
