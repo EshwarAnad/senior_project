@@ -15,9 +15,12 @@
 		<div class="panel panel-body">
 			<div class="well-lg">
 				<div class="btn-group">
-					<button class="btn btn-primary" ng-show="session.type === 'admin'"
+					<button class="btn btn-default" ng-show="session.type === 'admin'"
 					        ng-click="staffingRecommendation.active = !staffingRecommendation.active">
 						{{staffingRecommendation.active ? 'Deactivate' : 'Activate' }}
+					</button>
+					<button class="btn btn-default" ng-show="session.type === 'admin'">
+						Re-Assign Staffing User
 					</button>
 				</div>
 			</div>
@@ -39,7 +42,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Created By:</td>
+					<td>Assigned To:</td>
 					<td>
 						{{staffingRecommendation.staffingUser.username}}
 						<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
