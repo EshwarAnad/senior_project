@@ -1,21 +1,17 @@
 angular.module('tps', ['ngRoute'])
 
-    .controller('DashboardCtrl', function($scope){
-        $scope.debug = 'Hello World!';
-    })
-
-    .controller('NavigationController', function($scope, $location, NavigationConstants){
-        $scope.debug = 'Hello World!';
-
-        $scope.navbar = NavigationConstants;
-
-        $scope.goTo = function(path){
-            $location.path(path);
+    .run(function(SessionService){
+        var credential = {
+            id: 1000,
+            username: 'andyadmin',
+            firstName: 'Andy',
+            lastName: 'Admin',
+            type: 'admin',
+            hiringCompany: null,
+            emailAddress: 'andy@tpsstaffing.com'
         };
 
-        $scope.pathIsActive = function(path){
-            return path === $location.path();
-        };
+        SessionService.create(credential);
     })
 
     .config(function($routeProvider){
@@ -37,8 +33,38 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
+            .when('/hiringcompanies', {
+                controller: 'HiringCompaniesCtrl',
+                templateUrl: 'views/hiringCompanies.html'
+            })
+            .when('/hiringcompany/:id', {
+                controller: 'HiringCompanyCtrl',
+                templateUrl: 'views/hiringCompany.html',
+                resolve: {
+                    hiringCompanyId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
+            })
+            .when('/login', {
+                controller: 'LoginCtrl',
+                templateUrl: 'views/login.html'
+            })
+            .when('/staffingrequests', {
+                controller: 'StaffingRequests',
+                templateUrl: 'views/staffingRequests.html'
+            })
             .when('/users', {
                 controller: 'UsersCtrl',
-                templateUrl: 'views/candidate.html'
+                templateUrl: 'views/users.html'
+            })
+            .when('/user/:id', {
+                controller: 'UserCtrl',
+                templateUrl: 'views/user.html',
+                resolve: {
+                    userId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
             })
     });

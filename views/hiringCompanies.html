@@ -1,0 +1,31 @@
+<div class="h1">{{title}}</div>
+
+<div class="well-lg">
+	Search
+	
+	<div class="form-group">
+		<input class="form-control" type="text" ng-model="searchTerm">
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th>Company</th>
+		<th># of users</th>
+		<th>Open staffing requests</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr ng-repeat="company in hiringCompanies" ng-click="goToCompany(company)" class="clickable">
+		<td>
+			{{company.name}}
+			<span class="label label-success" ng-show="company.active">Active</span>
+			<span class="label label-danger" ng-show="!company.active">Inactive</span>
+		</td>
+		<td>{{company.userIds.length}}</td>
+		<td>{{company.staffingRequests || 0}}</td>
+	</tr>
+	</tbody>
+</table>

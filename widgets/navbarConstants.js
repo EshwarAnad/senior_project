@@ -1,15 +1,21 @@
 angular.module('tps').constant('NavigationConstants', {
-    home: {
-        path: '/'
+    candidate: {
+        path: '/candidate/'
     },
     candidates: {
         path: '/candidates'
     },
-    candidate: {
-        path: '/candidate/'
-    },
     hiringCompanies: {
         path: '/hiringcompanies'
+    },
+    login: {
+        path: '/login'
+    },
+    home: {
+        path: '/'
+    },
+    staffingRequests: {
+        path: '/staffingrequests'
     },
     users: {
         path: '/users'

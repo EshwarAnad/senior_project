@@ -1,1 +1,36 @@
-<div>{{debug || 'No controller connected yet!'}}</div>
+<div class="h1">{{title}}</div>
+
+<div class="well-lg">
+	Search
+	
+	<div class="form-group">
+		<input class="form-control" type="text" ng-model="searchTerm">
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th>Username</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email Address</th>
+		<th>Hiring Company</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr ng-repeat="user in users" ng-click="goToUser(user)" class="clickable">
+		<td>
+			{{user.username}}
+			<span class="label label-info" ng-show="user.type === 'admin'">Administrator</span>
+			<span class="label label-success" ng-show="user.type === 'staffing'">Staffing</span>
+			<span class="label label-primary" ng-show="user.type === 'hiring'">Hiring</span>
+		</td>
+		<td>{{user.firstName}}</td>
+		<td>{{user.lastName}}</td>
+		<td>{{user.emailAddress}}</td>
+		<td>{{user.hiringCompany}}</td>
+	</tr>
+	</tbody>
+</table>

@@ -1,0 +1,30 @@
+<div class="h1">{{title}}</div>
+
+<div class="well-lg">
+	Search
+	
+	<div class="form-group">
+		<input class="form-control" type="text" ng-model="searchTerm">
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th>Status</th>
+		<th>Company</th>
+		<th>Request By</th>
+		<th>Keywords</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr ng-repeat="request in staffingRequests" ng-click="goTo('/staffingrequest/' + request.id)"
+	    class="clickable">
+		<td>{{request.active ? 'Active' : 'Inactive'}}</td>
+		<td>{{request.company}}</td>
+		<td>{{request.staffingUser.username}}</td>
+		<td>{{request.skillKeywords.toString()}}</td>
+	</tr>
+	</tbody>
+</table>
