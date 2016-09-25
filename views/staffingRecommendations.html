@@ -1,0 +1,34 @@
+<div class="h1">{{title}}</div>
+
+<div class="well-lg">
+	Search
+	
+	<div class="form-group">
+		<input class="form-control" type="text" ng-model="searchTerm">
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th>Created</th>
+		<th>Status</th>
+		<th>Company</th>
+		<th>RequestId</th>
+		<th>Created By</th>
+		<th>Number of Candidates</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr ng-repeat="recommendation in staffingRecommendations" ng-click="goTo('/staffing/recommendation/' + recommendation.id)"
+	    class="clickable">
+		<td>{{recommendation.created | date : short}}</td>
+		<td>{{recommendation.active ? 'Active' : 'Inactive'}}</td>
+		<td>{{recommendation.company.name}}</td>
+		<td>{{recommendation.request.id}}</td>
+		<td>{{recommendation.staffingUser.username}}</td>
+		<td><span class="pull-right">{{recommendation.candidates.length | number}}</span></td>
+	</tr>
+	</tbody>
+</table>

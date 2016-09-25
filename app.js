@@ -50,9 +50,31 @@ angular.module('tps', ['ngRoute'])
                 controller: 'LoginCtrl',
                 templateUrl: 'views/login.html'
             })
+            .when('/staffing/recommendations', {
+                controller: 'StaffingRecommendations',
+                templateUrl: 'views/staffingRecommendations.html'
+            })
+            .when('/staffing/recommendation/:id', {
+                controller: 'StaffingRecommendationCtrl',
+                templateUrl: 'views/staffingRecommendation.html',
+                resolve: {
+                    staffingRecommendationId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
+            })
             .when('/staffingrequests', {
                 controller: 'StaffingRequests',
                 templateUrl: 'views/staffingRequests.html'
+            })
+            .when('/staffingrequest/:id', {
+                controller: 'StaffingRequest',
+                templateUrl: 'views/staffingRequest.html',
+                resolve: {
+                    staffingRequestId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
             })
             .when('/users', {
                 controller: 'UsersCtrl',

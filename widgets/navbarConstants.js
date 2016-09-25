@@ -14,6 +14,9 @@ angular.module('tps').constant('NavigationConstants', {
     home: {
         path: '/'
     },
+    staffingRecommendations: {
+        path: '/staffing/recommendations'
+    },
     staffingRequests: {
         path: '/staffingrequests'
     },

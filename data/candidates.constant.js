@@ -6,14 +6,21 @@ angular.module('tps').constant('CandidatesConstants', {
             lastName: 'Sterkowitz',
             skills: 'C#, AngularJS, Javascript',
             status: 'UnemployedJobSearching',
-            notes: '' },
+            notes: '',
+            recommendations: [
+
+            ]
+        },
         {
             id: 1001,
             firstName: 'Elon',
             lastName: 'Musk',
             skills: 'Physics, Astrophysics, Rocket Science, Electric Cars',
             status: 'EmployedNotInterested',
-            notes: ''
+            notes: '',
+            recommendations: [
+
+            ]
         },
         {
             id: 1002,
@@ -21,7 +28,10 @@ angular.module('tps').constant('CandidatesConstants', {
             lastName: 'Jordan',
             skills: 'Basketball, Dunking',
             status: 'EmployedJobSearching',
-            notes: ''
+            notes: '',
+            recommendations: [
+
+            ]
         }
     ]
 });

@@ -33,24 +33,19 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 					   aria-haspopup="true" aria-expanded="false">Staffing Requests <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a ng-click="goTo(navbar.staffingRequests.path)" class="clickable">View All</a></li>
-						<li><a href="#">Create Staffing Request</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a class="clickable">Create Staffing Request</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 					   aria-haspopup="true" aria-expanded="false">Staffing Recommendations <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">View All</a></li>
-						<li><a href="#">Create Staffing Recommendation</a></li>
+						<li><a ng-click="goTo(navbar.staffingRecommendations.path)" class="clickable">View All</a></li>
+						<li><a class="clickable">Create Staffing Recommendation</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -72,13 +67,12 @@
 						</li>
 					</ul>
 					<ul class="dropdown-menu" ng-if="session.active">
-						<li><a href="#">Profile</a></li>
+						<li class="clickable"><a>Profile</a></li>
 						<li role="separator" class="divider"></li>
-						<li>
+						<li class="clickable">
 							<a ng-click="logout()">
-								<i class="glyphicon glyphicon-log-out clickable">
-									Logout
-								</i>
+								<i class="glyphicon glyphicon-log-out"></i>
+								Logout
 							</a>
 						</li>
 					</ul>

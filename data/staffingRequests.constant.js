@@ -3,7 +3,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
         {
             id: 1000,
             company: 'SpaceX',
-            staffingUser: {
+            hiringUser: {
                 id: 1003,
                 username: 'stephenspacex',
                 firstName: 'Stephen',
@@ -14,12 +14,13 @@ angular.module('tps').constant('StaffingRequestsConstant', {
                 password: 'password1234'
             },
             active: true,
-            skillKeywords: [ 'c#', 'javascript', 'database']
+            skillKeywords: [ 'c#', 'javascript', 'database'],
+            created: new Date(2016, 8, 6, 23, 12, 1, 3)
         },
         {
             id: 1001,
             company: 'ACME Inc.',
-            staffingUser: {
+            hiringUser: {
                 id: 1002,
                 username: 'henryhiring',
                 firstName: 'Henry',
@@ -30,7 +31,8 @@ angular.module('tps').constant('StaffingRequestsConstant', {
                 password: 'password1234'
             },
             active: true,
-            skillKeywords: [ 'secretary', 'microsoft office', 'clerical']
+            skillKeywords: [ 'secretary', 'microsoft office', 'clerical'],
+            created: new Date(2016, 6, 15, 35, 11, 10, 23)
         }
     ]
 });
