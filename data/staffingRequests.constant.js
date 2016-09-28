@@ -2,7 +2,13 @@ angular.module('tps').constant('StaffingRequestsConstant', {
     staffingRequests: [
         {
             id: 1000,
-            company: 'SpaceX',
+            company: {
+                id: 1001,
+                name: 'SpaceX',
+                userIds: [ 1003 ],
+                notes: '',
+                active: true
+            },
             hiringUser: {
                 id: 1003,
                 username: 'stephenspacex',
@@ -19,7 +25,13 @@ angular.module('tps').constant('StaffingRequestsConstant', {
         },
         {
             id: 1001,
-            company: 'ACME Inc.',
+            company: {
+                id: 1000,
+                name: 'ACME Inc.',
+                userIds: [ 1002 ],
+                notes: '',
+                active: true
+            },
             hiringUser: {
                 id: 1002,
                 username: 'henryhiring',

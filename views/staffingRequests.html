@@ -24,7 +24,7 @@
 	    class="clickable">
 		<td>{{request.created | date : short}}</td>
 		<td>{{request.active ? 'Active' : 'Inactive'}}</td>
-		<td>{{request.company}}</td>
+		<td>{{request.company.name}}</td>
 		<td>{{request.hiringUser.username}}</td>
 		<td>{{request.skillKeywords.toString()}}</td>
 	</tr>
