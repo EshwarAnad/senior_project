@@ -82,7 +82,7 @@ angular.module('tps', ['ngRoute'])
                 }
             })
             .when(ROUTES.STAFFING_RECOMMENDATIONS_CREATE_DETAIL, {
-                controller: 'CreateStaffingRecommendationCtrl',
+                controller: 'CreateStaffingRecommendationDetailCtrl',
                 templateUrl: 'views/createStaffingRecommendationDetail.html',
                 resolve: {
                     staffingRequestId: function($route){

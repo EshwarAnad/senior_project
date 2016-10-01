@@ -1,8 +1,10 @@
 angular.module('tps').controller('CreateStaffingRecommendationDetailCtrl', createStaffingRecommendationDetailController);
 
-function createStaffingRecommendationDetailController(staffingRequestId, $scope, $location, CandidatesConstants){
+function createStaffingRecommendationDetailController(staffingRequestId, $scope, $location, CandidatesConstants, StaffingRequestsService){
 
     $scope.title = 'Create Staffing Recommendation Details';
+
+    $scope.staffingRequest = StaffingRequestsService.getById(staffingRequestId);
 
     $scope.candidates = CandidatesConstants.list;
 
