@@ -76,6 +76,10 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
+            .when('/staffing/request/create/', {
+                controller: '',
+                templateUrl: 'views/createStaffingRequest.html'
+            })
             .when('/users', {
                 controller: 'UsersCtrl',
                 templateUrl: 'views/users.html'

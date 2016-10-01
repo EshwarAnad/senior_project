@@ -20,6 +20,9 @@ angular.module('tps').constant('NavigationConstants', {
     staffingRequests: {
         path: '/staffingrequests'
     },
+    staffingRequestsCreate: {
+        path: '/staffing/request/create'
+    },
     users: {
         path: '/users'
     }
