@@ -40,7 +40,7 @@ function staffingRequestsService(StaffingRequestsConstant){
             active: true,
             skillKeywords: skillKeywordsArr,
             create: new Date()
-        })
+        });
     }
 
     return staffingRequestService;
