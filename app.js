@@ -21,13 +21,13 @@ angular.module('tps', ['ngRoute'])
         HIRING_COMPANIES_LIST: '/hiringcompanies',
         HOME: '/',
         LOGIN: '/login',
-        STAFFING_RECOMMENDATIONS_CREATE: '/staffing/recommendations/create/:staffingRequestId',
+        STAFFING_RECOMMENDATIONS_CREATE: '/staffing/recommendations/create/detail/:staffingRequestId',
         STAFFING_RECOMMENDATIONS_CREATE_LIST: '/staffing/recommendations/create/',
         STAFFING_RECOMMENDATIONS_DETAIL: '/staffing/recommendation/:id',
-        STAFFING_RECOMMENDATIONS_LIST: '/staffing/recommendations',
-        STAFFING_REQUESTS_CREATE: '/staffingrequests/create/',
-        STAFFING_REQUESTS_DETAIL: '/staffingrequests/:id',
-        STAFFING_REQUESTS_LIST: '/staffingrequests',
+        STAFFING_RECOMMENDATIONS_LIST: '/staffing/recommendations/',
+        STAFFING_REQUESTS_CREATE: '/staffing/requests/create/',
+        STAFFING_REQUESTS_DETAIL: '/staffing/requests/detail/:id',
+        STAFFING_REQUESTS_LIST: '/staffing/requests/',
         USER_DETAIL: '/user/:id',
         USER_LIST: '/users'
     })
@@ -114,7 +114,7 @@ angular.module('tps', ['ngRoute'])
             })
             .when(ROUTES.STAFFING_REQUESTS_CREATE, {
                 controller: 'CreateStaffingRequestCtrl',
-                templateUrl: 'views/createStaffingRecommendation.html'
+                templateUrl: 'views/createStaffingRequest.html'
             })
             .when(ROUTES.USER_LIST, {
                 controller: 'UsersCtrl',
