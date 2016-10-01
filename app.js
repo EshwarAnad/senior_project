@@ -21,7 +21,7 @@ angular.module('tps', ['ngRoute'])
         HIRING_COMPANIES_LIST: '/hiringcompanies',
         HOME: '/',
         LOGIN: '/login',
-        STAFFING_RECOMMENDATIONS_CREATE: '/staffing/recommendations/create/detail/:staffingRequestId',
+        STAFFING_RECOMMENDATIONS_CREATE_DETAIL: '/staffing/recommendations/create/detail/:staffingRequestId',
         STAFFING_RECOMMENDATIONS_CREATE_LIST: '/staffing/recommendations/create/',
         STAFFING_RECOMMENDATIONS_DETAIL: '/staffing/recommendation/:id',
         STAFFING_RECOMMENDATIONS_LIST: '/staffing/recommendations/',
@@ -81,9 +81,9 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
-            .when(ROUTES.STAFFING_RECOMMENDATIONS_CREATE, {
+            .when(ROUTES.STAFFING_RECOMMENDATIONS_CREATE_DETAIL, {
                 controller: 'CreateStaffingRecommendationCtrl',
-                templateUrl: 'views/createStaffingRecommendation.html',
+                templateUrl: 'views/createStaffingRecommendationDetail.html',
                 resolve: {
                     staffingRequestId: function($route){
                         return $route.current.params.staffingRequestId;
