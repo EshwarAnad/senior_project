@@ -14,8 +14,6 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
     }
 
     function getById(id){
-        var staffingRecommendations = staffingRecommendations;
-
         for(var i = 0; i < staffingRecommendations.length; i++){
             if(id.toString() === staffingRecommendations[i].id.toString()){
                 return staffingRecommendations[i];
@@ -29,17 +27,18 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
         var id = 1000;
 
         for(var i = 0; i < staffingRecommendations.length; i++){
-            id = Math.max(id, staffingRecommendations[i]);
+            id = Math.max(id, staffingRecommendations[i].id);
         }
 
-        staffingRecommendations.concat({
+        staffingRecommendations.push({
             id: id,
             active: true,
             company: companyObj,
             staffingUser: staffingUserObj,
             candidates: candidatesArr,
             request: requestObj,
-            notes: notesArr
+            notes: notesArr,
+            created: new Date()
         });
     }
 

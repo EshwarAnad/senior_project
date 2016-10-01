@@ -21,6 +21,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
             },
             active: true,
             skillKeywords: [ 'c#', 'javascript', 'database'],
+            notes: [],
             created: new Date(2016, 8, 6, 23, 12, 1, 3)
         },
         {
@@ -44,6 +45,21 @@ angular.module('tps').constant('StaffingRequestsConstant', {
             },
             active: true,
             skillKeywords: [ 'secretary', 'microsoft office', 'clerical'],
+            notes: [
+                {
+                    content: 'This needs to get done ASAP.  We\'re in a hurry!',
+                    author: {
+                        id: 1002,
+                        username: 'henryhiring',
+                        firstName: 'Henry',
+                        lastName: 'Hiring',
+                        type: 'hiring',
+                        hiringCompany: 'ACME Inc.',
+                        emailAddress: 'henry@acmeinc.com',
+                        password: 'password1234'
+                    }
+                }
+            ],
             created: new Date(2016, 6, 15, 35, 11, 10, 23)
         }
     ]

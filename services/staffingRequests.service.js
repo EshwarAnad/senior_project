@@ -8,15 +8,13 @@ function staffingRequestsService(StaffingRequestsConstant){
     staffingRequestService.create = create;
 
     var staffingRequests = StaffingRequestsConstant.staffingRequests;
-    console.log(staffingRequests);
 
     function getAll(){
         return staffingRequests;
     }
 
     function getById(id){
-        var staffingRequests = StaffingRequestsConstant.staffingRequests;
-
+        console.log(staffingRequests);
         for(var i = 0; i < staffingRequests.length; i++){
             if(id.toString() === staffingRequests[i].id.toString()){
                 return staffingRequests[i];
@@ -26,20 +24,21 @@ function staffingRequestsService(StaffingRequestsConstant){
         return null;
     }
 
-    function create(companyObj, hiringUserObj, skillKeywordsArr){
+    function create(companyObj, hiringUserObj, skillKeywordsArr, notesArr){
         var id = 1000;
 
         for(var i = 0; i < staffingRequests.length; i++){
-            id = Math.max(id, staffingRequests[i]);
+            id = Math.max(id, staffingRequests[i].id + 1);
         }
 
-        staffingRequests.concat({
+        staffingRequests.push({
             id: id,
             company: companyObj,
             hiringUser: hiringUserObj,
             active: true,
             skillKeywords: skillKeywordsArr,
-            create: new Date()
+            notes: notesArr,
+            created: new Date()
         });
     }
 
