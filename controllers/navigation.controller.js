@@ -1,6 +1,6 @@
 angular.module('tps').controller('NavigationController', navigationController);
 
-function navigationController($scope, $location, $route, NavigationConstants, SessionService, AuthenticationService){
+function navigationController($scope, $location, $route, ROUTES, NavigationConstants, SessionService, AuthenticationService){
     $scope.debug = 'Hello World!';
 
     $scope.goTo = goTo;
@@ -10,7 +10,7 @@ function navigationController($scope, $location, $route, NavigationConstants, Se
     $scope.loginAsHiringUser = loginAsHiringUser;
     $scope.logout = logout;
 
-    $scope.navbar = NavigationConstants;
+    $scope.paths = ROUTES;
     $scope.session = SessionService;
 
     function goTo(path){

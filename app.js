@@ -14,17 +14,35 @@ angular.module('tps', ['ngRoute'])
         SessionService.create(credential);
     })
 
-    .config(function($routeProvider){
+    .constant('ROUTES', {
+        CANDIDATES_DETAIL: '/candidate/:id',
+        CANDIDATES_LIST: '/candidates',
+        HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',
+        HIRING_COMPANIES_LIST: '/hiringcompanies',
+        HOME: '/',
+        LOGIN: '/login',
+        STAFFING_RECOMMENDATIONS_CREATE: '/staffing/recommendations/create/:staffingRequestId',
+        STAFFING_RECOMMENDATIONS_CREATE_LIST: '/staffing/recommendations/create/',
+        STAFFING_RECOMMENDATIONS_DETAIL: '/staffing/recommendation/:id',
+        STAFFING_RECOMMENDATIONS_LIST: '/staffing/recommendations',
+        STAFFING_REQUESTS_CREATE: '/staffingrequests/create/',
+        STAFFING_REQUESTS_DETAIL: '/staffingrequests/:id',
+        STAFFING_REQUESTS_LIST: '/staffingrequests',
+        USER_DETAIL: '/user/:id',
+        USER_LIST: '/users'
+    })
+
+    .config(function($routeProvider, ROUTES){
         $routeProvider
-            .when('/', {
+            .when(ROUTES.HOME, {
                 controller: 'DashboardCtrl',
                 templateUrl: 'views/dashboard.html'
             })
-            .when('/candidates', {
+            .when(ROUTES.CANDIDATES_LIST, {
                 controller: 'CandidatesCtrl',
                 templateUrl: 'views/candidates.html'
             })
-            .when('/candidate/:id', {
+            .when(ROUTES.CANDIDATES_DETAIL, {
                 controller: 'CandidateCtrl',
                 templateUrl: 'views/candidate.html',
                 resolve: {
@@ -33,11 +51,11 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
-            .when('/hiringcompanies', {
+            .when(ROUTES.HIRING_COMPANIES_LIST, {
                 controller: 'HiringCompaniesCtrl',
                 templateUrl: 'views/hiringCompanies.html'
             })
-            .when('/hiringcompany/:id', {
+            .when(ROUTES.HIRING_COMPANIES_DETAIL, {
                 controller: 'HiringCompanyCtrl',
                 templateUrl: 'views/hiringCompany.html',
                 resolve: {
@@ -46,15 +64,15 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
-            .when('/login', {
+            .when(ROUTES.LOGIN, {
                 controller: 'LoginCtrl',
                 templateUrl: 'views/login.html'
             })
-            .when('/staffing/recommendations', {
+            .when(ROUTES.STAFFING_RECOMMENDATIONS_LIST, {
                 controller: 'StaffingRecommendations',
                 templateUrl: 'views/staffingRecommendations.html'
             })
-            .when('/staffing/recommendation/:id', {
+            .when(ROUTES.STAFFING_RECOMMENDATIONS_DETAIL, {
                 controller: 'StaffingRecommendationCtrl',
                 templateUrl: 'views/staffingRecommendation.html',
                 resolve: {
@@ -63,11 +81,29 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
-            .when('/staffingrequests', {
+            .when(ROUTES.STAFFING_RECOMMENDATIONS_CREATE, {
+                controller: 'CreateStaffingRecommendationCtrl',
+                templateUrl: 'views/createStaffingRecommendation.html',
+                resolve: {
+                    staffingRequestId: function($route){
+                        return $route.current.params.staffingRequestId;
+                    }
+                }
+            })
+            .when(ROUTES.STAFFING_RECOMMENDATIONS_CREATE_LIST, {
+                controller: 'CreateStaffingRecommendationCtrl',
+                templateUrl: 'views/createStaffingRecommendation.html',
+                resolve: {
+                    staffingRequestId: function($route){
+                        return $route.current.params.staffingRequestId;
+                    }
+                }
+            })
+            .when(ROUTES.STAFFING_REQUESTS_LIST, {
                 controller: 'StaffingRequests',
                 templateUrl: 'views/staffingRequests.html'
             })
-            .when('/staffingrequest/:id', {
+            .when(ROUTES.STAFFING_REQUESTS_DETAIL, {
                 controller: 'StaffingRequest',
                 templateUrl: 'views/staffingRequest.html',
                 resolve: {
@@ -76,15 +112,15 @@ angular.module('tps', ['ngRoute'])
                     }
                 }
             })
-            .when('/staffing/request/create/', {
-                controller: '',
-                templateUrl: 'views/createStaffingRequest.html'
+            .when(ROUTES.STAFFING_REQUESTS_CREATE, {
+                controller: 'CreateStaffingRequestCtrl',
+                templateUrl: 'views/createStaffingRecommendation.html'
             })
-            .when('/users', {
+            .when(ROUTES.USER_LIST, {
                 controller: 'UsersCtrl',
                 templateUrl: 'views/users.html'
             })
-            .when('/user/:id', {
+            .when(ROUTES.USER_DETAIL, {
                 controller: 'UserCtrl',
                 templateUrl: 'views/user.html',
                 resolve: {

@@ -1,4 +1,6 @@
-angular.module('tps').controller('CandidatesCtrl', function($scope, CandidatesConstants, $location){
+angular.module('tps').controller('CandidatesCtrl', candidatesController);
+
+function candidatesController($scope, CandidatesConstants, $location){
         $scope.title = 'Candidates';
 
         $scope.candidates = CandidatesConstants.list;
@@ -6,4 +8,4 @@ angular.module('tps').controller('CandidatesCtrl', function($scope, CandidatesCo
         $scope.goToCandidate = function(candidate){
                 $location.path('/candidate/' + candidate.id);
         }
-});
+}

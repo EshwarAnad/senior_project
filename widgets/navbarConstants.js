@@ -17,6 +17,9 @@ angular.module('tps').constant('NavigationConstants', {
     staffingRecommendations: {
         path: '/staffing/recommendations'
     },
+    staffingRecommendationsCreate: {
+        path: '/staffing/recommendations/create/'
+    },
     staffingRequests: {
         path: '/staffingrequests'
     },
