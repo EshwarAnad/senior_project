@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="tps">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
@@ -33,7 +33,7 @@
 	<script src="services/authentication.service.js"></script>
 	<script src="services/hiringCompanies.service.js"></script>
 	<script src="services/users.service.js"></script>
-	<script src="services/ROUTES.constant.js"></script>
+	<!--<script src="services/ROUTES.constant.js"></script>-->
 	<script src="services/session.service.js"></script>
 	<script src="services/staffingRecommendations.service.js"></script>
 	<script src="services/staffingRequests.service.js"></script>
@@ -57,7 +57,7 @@
 	<script src="controllers/user.controller.js"></script>
 
 </head>
-<body>
+<body ng-app="tps">
 <div class="container">
 	<div ng-controller="NavigationController">
 		<div ng-include="'widgets/navbar.html'"></div>
