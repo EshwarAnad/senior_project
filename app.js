@@ -100,6 +100,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'CreateStaffingRequestCtrl',
                 templateUrl: 'views/createStaffingRequest.html'
             })
+            .when(ROUTES.USER_CREATE, {
+                controller: 'CreateUserCtrl',
+                templateUrl: 'views/createUser.html'
+            })
             .when(ROUTES.USER_LIST, {
                 controller: 'UsersCtrl',
                 templateUrl: 'views/users.html'
@@ -131,5 +135,6 @@ angular.module('tps.ROUTES', [])
         STAFFING_REQUESTS_DETAIL: '/staffing/requests/detail/:id',
         STAFFING_REQUESTS_LIST: '/staffing/requests/',
         USER_DETAIL: '/user/:id',
-        USER_LIST: '/users'
+        USER_LIST: '/users',
+        USER_CREATE: '/users/create'
     });

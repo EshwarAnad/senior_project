@@ -6,7 +6,25 @@ angular.module('tps').constant('CandidatesConstants', {
             lastName: 'Sterkowitz',
             skills: 'C#, AngularJS, Javascript',
             status: 'UnemployedJobSearching',
-            notes: '',
+            notes: [
+
+            ],
+            privateNotes: [
+                {
+                    content: 'An awesome candidate!  He should get hired somewhere...',
+                    author: {
+                        id: 1001,
+                        username: 'sallystaffer',
+                        firstName: 'Sally',
+                        lastName: 'Staffer',
+                        type: 'staffing',
+                        hiringCompany: null,
+                        emailAddress: 'sally@tpsstaffing.com',
+                        password: 'password1234'
+                    },
+                    created: new Date(2016, 8, 7, 11, 17, 11, 13)
+                }
+            ],
             recommendations: [
 
             ]
@@ -17,7 +35,10 @@ angular.module('tps').constant('CandidatesConstants', {
             lastName: 'Musk',
             skills: 'Physics, Astrophysics, Rocket Science, Electric Cars',
             status: 'EmployedNotInterested',
-            notes: '',
+            notes: [],
+            privateNotes: [
+
+            ],
             recommendations: [
 
             ]
@@ -28,7 +49,10 @@ angular.module('tps').constant('CandidatesConstants', {
             lastName: 'Jordan',
             skills: 'Basketball, Dunking',
             status: 'EmployedJobSearching',
-            notes: '',
+            notes: [],
+            privateNotes: [
+
+            ],
             recommendations: [
 
             ]

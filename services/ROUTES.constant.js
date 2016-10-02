@@ -12,6 +12,7 @@ angular.module('tps').constant('ROUTES', {
     STAFFING_REQUESTS_CREATE: '/staffing/requests/create/',
     STAFFING_REQUESTS_DETAIL: '/staffing/requests/detail/:id',
     STAFFING_REQUESTS_LIST: '/staffing/requests/',
+    USER_CREATE: '/user/create',
     USER_DETAIL: '/user/:id',
     USER_LIST: '/users'
 });

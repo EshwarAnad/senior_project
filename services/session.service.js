@@ -1,6 +1,14 @@
 angular.module('tps').service('SessionService', sessionService);
 
 function sessionService($rootScope){
+    this.user = function(){
+        //var derp = Object.assign({}, this);
+
+        //console.log(derp);
+
+        return 'yer mom';
+    };
+
     this.create = function(user){
         this.id = user.id;
         this.username = user.username;
@@ -10,6 +18,7 @@ function sessionService($rootScope){
         this.hiringCompany = user.hiringCompany;
         this.emailAddress = user.emailAddress;
         this.active = true;
+        this.user = Object.assign({}, this);
         $rootScope.session = this;
     };
 
@@ -23,5 +32,5 @@ function sessionService($rootScope){
         this.emailAddress = null;
         this.active = false;
         $rootScope.session = null;
-    }
+    };
 }

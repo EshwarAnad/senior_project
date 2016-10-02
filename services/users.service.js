@@ -6,14 +6,15 @@ function userService(UsersConstants){
     userService.getAll = getAll;
     userService.getByUsername = getByUsername;
     userService.getById = getById;
+    userService.create = create;
+
+    var users = UsersConstants.users;
 
     function getAll(){
-        return UsersConstants.users;
+        return users;
     }
 
     function getByUsername(username){
-        var users = UsersConstants.users;
-
         for(var i = 0; i < users.length; i++){
             if(username.toLowerCase() === users[i].username.toLowerCase()){
                 return users[i];
@@ -24,8 +25,6 @@ function userService(UsersConstants){
     }
 
     function getById(id){
-        var users = UsersConstants.users;
-
         for(var i = 0; i < users.length; i++){
             if(id.toString() === users[i].id.toString()){
                 return users[i];
@@ -33,6 +32,27 @@ function userService(UsersConstants){
         }
 
         return null;
+    }
+
+    function create(username, firstName, lastName,
+                    type, hiringCompanyObj, emailAddress, password){
+        var id = 1000;
+
+        for(var i = 0; i < users.length; i++){
+            id = Math.max(id, users[i].id + 1);
+        }
+
+        users.push({
+            id: id,
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            type: type,
+            hiringCompany: hiringCompanyObj,
+            emailAddress: emailAddress,
+            password: password,
+            created: new Date()
+        })
     }
 
     return userService;
