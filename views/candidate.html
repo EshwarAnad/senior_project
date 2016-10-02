@@ -111,5 +111,26 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="panel panel-info" ng-hide="session.type === 'hiring'">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				Current Job Recommendations
+			</h3>
+		</div>
+		<div class="panel panel-body">
+			<ul>
+				<li ng-repeat="recommendation in staffingRecommendations">
+					<p>{{recommendation.company.name}}</p>
+					<p>{{recommendation.request.skillKeywords.toString()}}</p>
+					<p>Current Response:
+						<strong>
+							{{!recommendation.myCurrentResponse ? 'AWAITING RESPONSE' : recommendation.myCurrentResponse.toUpperCase()}}
+						</strong>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 

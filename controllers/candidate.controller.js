@@ -1,9 +1,14 @@
 angular.module('tps').controller('CandidateCtrl', function($scope, candidateId, CandidatesConstants, $location,
-                                                            $rootScope){
+                                                            $rootScope, StaffingRecommendationsService){
     $scope.title = 'Candidates';
 
     $scope.addNote = addNote;
     $scope.addPrivateNote = addPrivateNote;
+
+    $scope.staffingRecommendations =
+        StaffingRecommendationsService.getForCandidate(candidateId);
+
+    console.log($scope.staffingRecommendations);
 
     var candidates = CandidatesConstants.list;
 
@@ -35,7 +40,7 @@ angular.module('tps').controller('CandidateCtrl', function($scope, candidateId, 
             content: content,
             author: $rootScope.session.user,
             created: new Date()
-        })
+        });
 
         $scope.pendingPrivateNote = '';
     }

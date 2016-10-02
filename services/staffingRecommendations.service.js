@@ -6,6 +6,7 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
     staffingRecommendationsService.getAll = getAll;
     staffingRecommendationsService.getById = getById;
     staffingRecommendationsService.create = create;
+    staffingRecommendationsService.getForCandidate = getForCandidate;
 
     var staffingRecommendations = StaffingRecommendationsConstant.staffingRecommendations;
 
@@ -66,6 +67,24 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
         }
 
         return id;
+    }
+
+    function getForCandidate(candidateId){
+        var recommendations = [];
+
+        for(var i = 0; i < staffingRecommendations.length; i++){
+            for(var j = 0; j < staffingRecommendations[i].candidates.length; j++){
+                if(staffingRecommendations[i].candidates[j].details.id.toString() === candidateId.toString()){
+                    var recommendation = staffingRecommendations[i];
+
+                    recommendation.myCurrentResponse = staffingRecommendations[i].candidates[j].candidateResponse;
+
+                    recommendations.push(recommendation);
+                }
+            }
+        }
+
+        return recommendations;
     }
 
     return staffingRecommendationsService;
