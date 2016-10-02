@@ -14,7 +14,6 @@ function staffingRequestsService(StaffingRequestsConstant){
     }
 
     function getById(id){
-        console.log(staffingRequests);
         for(var i = 0; i < staffingRequests.length; i++){
             if(id.toString() === staffingRequests[i].id.toString()){
                 return staffingRequests[i];

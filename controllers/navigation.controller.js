@@ -11,9 +11,11 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
     $scope.logout = logout;
 
     $scope.paths = ROUTES;
+    console.log($scope.paths);
     $scope.session = SessionService;
 
     function goTo(path){
+        console.log(path);
         $location.path(path);
     }
 
