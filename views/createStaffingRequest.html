@@ -46,7 +46,7 @@
 	
 	<div class="form-actions">
 		<div class="pull-right">
-			<button class="btn btn-lg btn-primary" ng-click="create()" ng-disabled="!selectedHiringCompany">Create</button>
+			<button class="btn btn-lg btn-primary" ng-click="create()" ng-disabled="!selectedHiringCompany  && session.type !== 'hiring'">Create</button>
 			<button class="btn btn-lg btn-default">Cancel</button>
 		</div>
 	</div>

@@ -36,7 +36,11 @@ function createStaffingRequestController($rootScope, $scope, $location, Candidat
     }
 
     function create(){
-        StaffingRequestsService.create(JSON.parse($scope.selectedHiringCompany),
+        var hiringCompany = $scope.session.type === 'hiring'
+            ? $scope.session.hiringCompany
+            : JSON.parse($scope.selectedHiringCompany);
+
+        StaffingRequestsService.create(hiringCompany,
             $rootScope.session,
             $scope.skillKeywords.split(','),
             $scope.createdNotes);
