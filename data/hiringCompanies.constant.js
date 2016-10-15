@@ -4,14 +4,14 @@ angular.module('tps').constant('HiringCompaniesConstants', {
             id: 1000,
             name: 'ACME Inc.',
             userIds: [ 1002 ],
-            notes: '',
+            notes: [],
             active: true
         },
         {
             id: 1001,
             name: 'SpaceX',
             userIds: [ 1003 ],
-            notes: '',
+            notes: [],
             active: true
         }
     ]
