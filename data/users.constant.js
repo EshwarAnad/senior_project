@@ -50,7 +50,53 @@ angular.module('tps').constant('UsersConstants', {
             emailAddress: 'ccandidate@gmail.com',
             password: 'password1234',
             candidateInfo: {
+                id: 1004,
+                skills: 'Copy-writing, Microsoft Word, Microsoft Excel',
+                status: 'EmployedJobSearching',
+                notes: [
 
+                ],
+                privateNotes: [
+                    {
+                        content: 'This is a very interesting candidate.  I believe he should be hired quickly.',
+                        author: {
+                            id: 1001,
+                            username: 'sallystaffer',
+                            firstName: 'Sally',
+                            lastName: 'Staffer',
+                            type: 'staffing',
+                            hiringCompany: null,
+                            emailAddress: 'sally@tpsstaffing.com',
+                            password: 'password1234'
+                        },
+                        created: new Date(2016, 7, 29, 11, 17, 11, 13)
+                    }
+                ],
+                recommendations: [
+
+                ]
+            }
+        },
+        {
+            id: 1005,
+            username: 'michaeljordan',
+            firstName: 'Michael',
+            lastName: 'Jordan',
+            type: 'candidate',
+            hiringCompany: null,
+            emailAddress: 'ccandidate@gmail.com',
+            password: 'password1234',
+            candidateInfo: {
+                id: 1002,
+                skills: 'Basketball, Dunking',
+                status: 'EmployedJobSearching',
+                notes: [],
+                privateNotes: [
+
+                ],
+                recommendations: [
+
+                ]
             }
         }
     ]
