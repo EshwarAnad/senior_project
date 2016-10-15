@@ -1,13 +1,13 @@
 angular.module('tps').controller('CreateUserCtrl', createUserController);
 
-function createUserController($scope, $location, UserService, HiringCompaniesService,
+function createUserController($scope, $location, UserService, CandidateUserService, HiringCompaniesService,
                                     ROUTES){
     $scope.title = 'Create User';
 
     $scope.goToUser = goToUser;
     $scope.create = create;
 
-    $scope.users = UserService.getAll();
+    $scope.users = CandidateUserService.getAllUsers();
     $scope.hiringCompanies = HiringCompaniesService.getAll();
 
     function goToUser(user){
@@ -21,7 +21,7 @@ function createUserController($scope, $location, UserService, HiringCompaniesSer
             $scope.lastName, $scope.userType, JSON.parse($scope.hiringCompany),
             $scope.emailAddress, $scope.password);
 
-        console.log(UserService.getAll());
+        console.log(CandidateUserService.getAllUsers());
 
         $location.path(ROUTES.USER_LIST);
     }

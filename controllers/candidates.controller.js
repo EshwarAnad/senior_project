@@ -1,12 +1,12 @@
 angular.module('tps').controller('CandidatesCtrl', candidatesController);
 
-function candidatesController($scope, CandidateService, $location, ROUTES){
+function candidatesController($scope, CandidateUserService, CandidateService, $location, ROUTES){
         $scope.title = 'Candidates';
 
         $scope.createCandidate = createCandidate;
         $scope.goToCandidate = goToCandidate;
 
-        $scope.candidates = CandidateService.getAll();
+        $scope.candidates = CandidateUserService.getAllCandidates();
 
         function goToCandidate(candidate){
                 $location.path('/candidate/' + candidate.id);

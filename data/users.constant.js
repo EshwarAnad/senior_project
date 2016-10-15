@@ -50,7 +50,7 @@ angular.module('tps').constant('UsersConstants', {
             emailAddress: 'ccandidate@gmail.com',
             password: 'password1234',
             candidateInfo: {
-                id: 1004,
+                id: 1003,
                 skills: 'Copy-writing, Microsoft Word, Microsoft Excel',
                 status: 'EmployedJobSearching',
                 notes: [
