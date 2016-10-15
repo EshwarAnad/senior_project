@@ -35,7 +35,7 @@
 				<span class="label label-danger" ng-show="!company.active">Inactive</span>
 			</td>
 			<td>{{company.users.length}}</td>
-			<td>{{company.staffingRequests || 0}}</td>
+			<td>{{company.staffingRequests.length || 0}}</td>
 		</tr>
 		</tbody>
 	</table>
