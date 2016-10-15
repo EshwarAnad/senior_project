@@ -54,7 +54,7 @@
 					<td>Candidates</td>
 					<td>
 						<p ng-repeat="candidate in staffingRecommendation.candidates">
-							{{candidate.details.firstName + ' ' + candidate.details.lastName}}
+							{{candidate.details.user.firstName + ' ' + candidate.details.user.lastName}}
 							<button class="btn btn-xs btn-default"
 							        ng-click="candidate.showDetails = !candidate.showDetails">
 								<i class="glyphicon glyphicon-info-sign"></i>

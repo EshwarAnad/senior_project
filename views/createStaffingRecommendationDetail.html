@@ -29,8 +29,8 @@
 		<td>
 			<input title="isSelected" type="checkbox" ng-model="candidate.selected" ng-click="stopProp($event, candidate)">
 		</td>
-		<td>{{candidate.firstName}}</td>
-		<td>{{candidate.lastName}}</td>
+		<td>{{candidate.user.firstName}}</td>
+		<td>{{candidate.user.lastName}}</td>
 		<td>{{candidate.status}}</td>
 		<td align="center">
 			<button ng-click="stopProp($event, candidate, true)" class="btn btn-primary btn-block">

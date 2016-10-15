@@ -9,6 +9,7 @@ function createStaffingRecommendationDetailController(staffingRequestId, $scope,
     console.log($scope.staffingRequest);
 
     $scope.candidates = CandidatesConstants.list;
+    console.log($scope.candidates);
 
     $scope.goTo = goTo;
     $scope.stopProp = stopProp;
