@@ -1,6 +1,6 @@
 angular.module('tps').factory('CandidateUserService', candidateUserService);
 
-function candidateUserService(CandidatesConstants, UsersConstants){
+function candidateUserService(CandidatesConstants, UsersConstants, HiringCompaniesService){
     var userCandidateService = {};
 
     // USER
@@ -66,6 +66,10 @@ function candidateUserService(CandidatesConstants, UsersConstants){
         };
 
         users.push(user);
+
+        if(hiringCompanyObj){
+            HiringCompaniesService.addUser(hiringCompanyObj.id, user);
+        }
 
         return user;
     }
