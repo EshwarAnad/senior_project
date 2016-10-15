@@ -60,8 +60,10 @@ function userService(UsersConstants){
         return user;
     }
 
-    function addCandidateEntity(){
+    function addCandidateEntity(id, candidate){
+        user = getById(id);
 
+        user.candidateInfo = candidate;
     }
 
     return userService;

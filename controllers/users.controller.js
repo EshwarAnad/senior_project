@@ -7,6 +7,7 @@ function usersController($scope, $location, UserService, ROUTES){
     $scope.createUser = createUser;
 
     $scope.users = UserService.getAll();
+    console.log($scope.users);
 
     function goToUser(user){
         $location.path('/user/' + user.id);

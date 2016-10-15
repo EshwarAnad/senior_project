@@ -29,10 +29,6 @@ function candidateService(CandidatesConstants, UserService){
 
         var candidate = {
             id: id,
-            username: username,
-            password: password,
-            firstName: firstName,
-            lastName: lastName,
             skills: skills,
             status: status,
             notes: [],
@@ -40,6 +36,8 @@ function candidateService(CandidatesConstants, UserService){
             recommendations: [],
             user: user
         };
+
+        UserService.addCandidateEntity(user.id, candidate);
 
         candidates.push(candidate);
 
