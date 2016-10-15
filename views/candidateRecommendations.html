@@ -1,0 +1,7 @@
+<div ng-show="session.type !== 'candidate'" class="text-center">
+	<ng-include src="'partials/notAuthorized.html'"></ng-include>
+</div>
+
+<div ng-show="session.type === 'candidate'">
+	<div class="h1">{{title}}</div>
+</div>

@@ -45,6 +45,7 @@
 	<script src="controllers/candidate.controller.js"></script>
 	<script src="controllers/candidateCreate.controller.js"></script>
 	<script src="controllers/candidateProfile.controller.js"></script>
+	<script src="controllers/candidateRecommendations.controller.js"></script>
 	<script src="controllers/createStaffingRecommendation.controller.js"></script>
 	<script src="controllers/createStaffingRecommendationDetail.controller.js"></script>
 	<script src="controllers/createStaffingRequest.controller.js"></script>
@@ -90,6 +91,9 @@
 						</li>
 						<li ng-class="{active: pathIsActive(paths.CANDIDATE_UPDATE_INFO)}" ng-show="session.type === 'candidate'">
 							<a ng-click="goTo(paths.CANDIDATE_UPDATE_INFO)" class="clickable">Update Information</a>
+						</li>
+						<li ng-class="{active: pathIsActive(paths.CANDIDATE_RECOMMENDATIONS)}" ng-show="session.type === 'candidate'">
+							<a ng-click="goTo(paths.CANDIDATE_RECOMMENDATIONS)" class="clickable">Job Recommendations</a>
 						</li>
 						<li ng-class="{active: pathIsActive(paths.CANDIDATES_LIST)}" ng-hide="session.type === 'candidate'">
 							<a ng-click="goTo(paths.CANDIDATES_LIST)" class="clickable">Candidates</a>
