@@ -38,6 +38,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                     }
                 }
             })
+            .when(ROUTES.HIRING_COMPANIES_CREATE, {
+                controller: 'HiringCompaniesCreateCtrl',
+                templateUrl: 'views/hiringCompaniesCreate.html'
+            })
             .when(ROUTES.HIRING_COMPANIES_LIST, {
                 controller: 'HiringCompaniesCtrl',
                 templateUrl: 'views/hiringCompanies.html'
@@ -127,6 +131,7 @@ angular.module('tps.ROUTES', [])
         CANDIDATES_CREATE: '/candidates/create',
         CANDIDATES_DETAIL: '/candidate/:id',
         CANDIDATES_LIST: '/candidates',
+        HIRING_COMPANIES_CREATE: '/hiringcompanies/create',
         HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',
         HIRING_COMPANIES_LIST: '/hiringcompanies',
         HOME: '/',
