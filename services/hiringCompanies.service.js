@@ -26,8 +26,8 @@ function hiringCompaniesService(HiringCompaniesConstants){
     function create(name){
         var id = 1000;
 
-        for(var i = 0; i < candidates.length; i++){
-            id = Math.max(id, candidates[i].id + 1);
+        for(var i = 0; i < hiringCompanies.length; i++){
+            id = Math.max(id, hiringCompanies[i].id + 1);
         }
 
         var hiringCompany = {
@@ -38,7 +38,7 @@ function hiringCompaniesService(HiringCompaniesConstants){
             active: true
         };
 
-        candidates.push(hiringCompany);
+        hiringCompanies.push(hiringCompany);
 
         return hiringCompany;
     }
