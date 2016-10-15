@@ -70,6 +70,8 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
     }
 
     function getForCandidate(candidateId){
+        if(!candidateId) return [];
+
         var recommendations = [];
 
         for(var i = 0; i < staffingRecommendations.length; i++){

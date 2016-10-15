@@ -6,8 +6,19 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
             company: {
                 id: 1001,
                 name: 'SpaceX',
-                userIds: [ 1003 ],
-                notes: '',
+                users: [
+                    {
+                        id: 1003,
+                        username: 'stephenspacex',
+                        firstName: 'Stephen',
+                        lastName: 'SpaceX',
+                        type: 'hiring',
+                        hiringCompany: 'SpaceX',
+                        emailAddress: 'stephen@spacex.com',
+                        password: 'password1234'
+                    }
+                ],
+                notes: [],
                 active: true
             },
             staffingUser: {
@@ -93,14 +104,47 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
             ],
             request: {
                 id: 1000,
-                company: 'SpaceX',
+                company: {
+                    id: 1001,
+                    name: 'SpaceX',
+                    users: [
+                        {
+                            id: 1003,
+                            username: 'stephenspacex',
+                            firstName: 'Stephen',
+                            lastName: 'SpaceX',
+                            type: 'hiring',
+                            hiringCompany: 'SpaceX',
+                            emailAddress: 'stephen@spacex.com',
+                            password: 'password1234'
+                        }
+                    ],
+                    notes: [],
+                    active: true
+                },
                 hiringUser: {
                     id: 1003,
                     username: 'stephenspacex',
                     firstName: 'Stephen',
                     lastName: 'SpaceX',
                     type: 'hiring',
-                    hiringCompany: 'SpaceX',
+                    hiringCompany: {
+                        id: 1001,
+                        name: 'SpaceX',
+                        users: [
+                            {
+                                id: 1003,
+                                username: 'stephenspacex',
+                                firstName: 'Stephen',
+                                lastName: 'SpaceX',
+                                type: 'hiring',
+                                emailAddress: 'stephen@spacex.com',
+                                password: 'password1234'
+                            }
+                        ],
+                        notes: [],
+                        active: true
+                    },
                     emailAddress: 'stephen@spacex.com',
                     password: 'password1234'
                 },
@@ -125,6 +169,128 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                 }
             ],
             created: new Date(2016, 8, 7, 11, 17, 11, 13)
+        },
+        {
+            id: 1001,
+            active: true,
+            company: {
+                id: 1000,
+                name: 'ACME Inc.',
+                users: [
+                    {
+                        id: 1002,
+                        username: 'henryhiring',
+                        firstName: 'Henry',
+                        lastName: 'Hiring',
+                        type: 'hiring',
+                        hiringCompany: 'ACME Inc.',
+                        emailAddress: 'henry@acmeinc.com',
+                        password: 'password1234'
+                    }
+                ],
+                notes: [],
+                active: true
+            },
+            staffingUser: {
+                id: 1001,
+                username: 'sallystaffer',
+                firstName: 'Sally',
+                lastName: 'Staffer',
+                type: 'staffing',
+                hiringCompany: null,
+                emailAddress: 'sally@tpsstaffing.com',
+                password: 'password1234'
+            },
+            candidates: [
+                {
+                    id: 9001,
+                    details: {
+                        id: 1002,
+                        skills: 'Basketball, Dunking',
+                        status: 'EmployedJobSearching',
+                        notes: [],
+                        privateNotes: [],
+                        recommendations: [],
+                        user: {
+                            id: 1003,
+                            skills: 'Copy-writing, Microsoft Word, Microsoft Excel',
+                            status: 'EmployedJobSearching',
+                            notes: [
+
+                            ],
+                            privateNotes: [
+                                {
+                                    content: 'This is a very interesting candidate.  I believe he should be hired quickly.',
+                                    author: {
+                                        id: 1001,
+                                        username: 'sallystaffer',
+                                        firstName: 'Sally',
+                                        lastName: 'Staffer',
+                                        type: 'staffing',
+                                        hiringCompany: null,
+                                        emailAddress: 'sally@tpsstaffing.com',
+                                        password: 'password1234'
+                                    },
+                                    created: new Date(2016, 7, 29, 11, 17, 11, 13)
+                                }
+                            ],
+                            recommendations: [
+
+                            ],
+                            user: {
+                                id: 1004,
+                                username: 'christoperCandidate',
+                                firstName: 'Christopher',
+                                lastName: 'Candidate',
+                                type: 'candidate',
+                                hiringCompany: null,
+                                emailAddress: 'ccandidate@gmail.com',
+                                password: 'password1234'
+                            }
+                        }
+                    }
+                }
+            ],
+            request: {
+                id: 1001,
+                company: {
+                    id: 1000,
+                    name: 'ACME Inc.',
+                    userIds: [ 1002 ],
+                    notes: '',
+                    active: true
+                },
+                hiringUser: {
+                    id: 1002,
+                    username: 'henryhiring',
+                    firstName: 'Henry',
+                    lastName: 'Hiring',
+                    type: 'hiring',
+                    hiringCompany: 'ACME Inc.',
+                    emailAddress: 'henry@acmeinc.com',
+                    password: 'password1234'
+                },
+                active: true,
+                skillKeywords: [ 'secretary', 'microsoft office', 'clerical'],
+                notes: [
+                    {
+                        content: 'This needs to get done ASAP.  We\'re in a hurry!',
+                        author: {
+                            id: 1002,
+                            username: 'henryhiring',
+                            firstName: 'Henry',
+                            lastName: 'Hiring',
+                            type: 'hiring',
+                            hiringCompany: 'ACME Inc.',
+                            emailAddress: 'henry@acmeinc.com',
+                            password: 'password1234'
+                        }
+                    }
+                ],
+                created: new Date(2016, 6, 15, 35, 11, 10, 23)
+            },
+            notes: [],
+            created: new Date(2016, 9, 6, 9, 8, 11, 13)
         }
     ]
 });
