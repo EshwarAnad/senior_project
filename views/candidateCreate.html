@@ -47,6 +47,20 @@
 			<input type="text" class="form-control" name="skills" ng-model="skills">
 		</div>
 	</div>
+	
+	<div class="col-md-8 col-md-offset-2">
+		<div class="form-group">
+			<label class="control-label">
+				Current Status
+			</label>
+			<select class="form-control" name="status" ng-model="status">
+				<option value="UnemployedJobSearching">Unemployed and searching for a job</option>
+				<option value="UnemployedNotSearching">Unemployed and not searching for a job</option>
+				<option value="EmployedJobSearching">Employed and searching for a new job</option>
+				<option value="EmployedNotInterested">Employed and not searching for a new job</option>
+			</select>
+		</div>
+	</div>
 </div>
 
 <hr>

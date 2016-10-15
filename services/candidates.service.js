@@ -24,7 +24,7 @@ function candidateService(CandidatesConstants){
             id = Math.max(id, candidates[i].id + 1);
         }
 
-        candidates.push({
+        var candidate = {
             id: id,
             username: username,
             password: password,
@@ -35,7 +35,11 @@ function candidateService(CandidatesConstants){
             notes: [],
             privateNotes: [],
             recommendations: []
-        })
+        };
+
+        candidates.push(candidate);
+
+        return candidate;
     }
 
     return candidateService;

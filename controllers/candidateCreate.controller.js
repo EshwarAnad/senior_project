@@ -7,8 +7,9 @@ function candidateCreateController($scope, CandidateService, $location, ROUTES){
     $scope.cancel = cancel;
 
     function create(){
-        CandidateService.create($scope.username, $scope.password, $scope.firstName,
-            $scope.lastName, $scope.skills, '');
+        var candidate = CandidateService.create($scope.username, $scope.password, $scope.firstName,
+            $scope.lastName, $scope.skills, $scope.status);
+        $location.path(ROUTES.CANDIDATES_DETAIL.replace(':id', candidate.id))
     }
 
     function cancel(){
