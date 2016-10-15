@@ -145,8 +145,8 @@
 								</li>
 							</ul>
 							<ul class="dropdown-menu" ng-if="session.active">
-								<li class="clickable"><a>Profile</a></li>
-								<li role="separator" class="divider"></li>
+								<li class="clickable" ng-hide="session.type === 'candidate'"><a>Profile</a></li>
+								<li role="separator" class="divider" ng-hide="session.type === 'candidate'"></li>
 								<li class="clickable" ng-click="loginAsAdmin()" ng-hide="session.type === 'admin'">
 									<a>Switch to Admin User Session</a>
 								</li>
