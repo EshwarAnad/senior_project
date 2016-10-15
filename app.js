@@ -25,10 +25,6 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'CandidateCreateCtrl',
                 templateUrl: 'views/candidateCreate.html'
             })
-            .when(ROUTES.CANDIDATES_LIST, {
-                controller: 'CandidatesCtrl',
-                templateUrl: 'views/candidates.html'
-            })
             .when(ROUTES.CANDIDATES_DETAIL, {
                 controller: 'CandidateCtrl',
                 templateUrl: 'views/candidate.html',
@@ -37,6 +33,14 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                         return $route.current.params.id;
                     }
                 }
+            })
+            .when(ROUTES.CANDIDATES_LIST, {
+                controller: 'CandidatesCtrl',
+                templateUrl: 'views/candidates.html'
+            })
+            .when(ROUTES.CANDIDATE_UPDATE_INFO, {
+                controller: 'CandidateProfileCtrl',
+                templateUrl: 'views/candidateProfile.html'
             })
             .when(ROUTES.HIRING_COMPANIES_CREATE, {
                 controller: 'HiringCompaniesCreateCtrl',
@@ -131,6 +135,7 @@ angular.module('tps.ROUTES', [])
         CANDIDATES_CREATE: '/candidates/create',
         CANDIDATES_DETAIL: '/candidate/:id',
         CANDIDATES_LIST: '/candidates',
+        CANDIDATE_UPDATE_INFO: '/candidates/profile',
         HIRING_COMPANIES_CREATE: '/hiringcompanies/create',
         HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',
         HIRING_COMPANIES_LIST: '/hiringcompanies',
