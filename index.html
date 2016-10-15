@@ -86,7 +86,7 @@
 						<li ng-class="{active: pathIsActive(paths.CANDIDATES_LIST)}">
 							<a ng-click="goTo(paths.CANDIDATES_LIST)" class="clickable">Candidates</a>
 						</li>
-						<li class="dropdown"
+						<li class="dropdown" ng-hide="session.type === 'hiring' || session.type === 'candidate'"
 						    ng-class="{active: pathIsActive(paths.USER_LIST) || pathIsActive(paths.HIRING_COMPANIES_LIST)}">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
