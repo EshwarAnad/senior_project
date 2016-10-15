@@ -7,6 +7,7 @@ function userService(UsersConstants){
     userService.getByUsername = getByUsername;
     userService.getById = getById;
     userService.create = create;
+    userService.addCandidateEntity = addCandidateEntity;
 
     var users = UsersConstants.users;
 
@@ -42,7 +43,7 @@ function userService(UsersConstants){
             id = Math.max(id, users[i].id + 1);
         }
 
-        users.push({
+        var user = {
             id: id,
             username: username,
             firstName: firstName,
@@ -52,7 +53,15 @@ function userService(UsersConstants){
             emailAddress: emailAddress,
             password: password,
             created: new Date()
-        })
+        };
+
+        users.push(user);
+
+        return user;
+    }
+
+    function addCandidateEntity(){
+
     }
 
     return userService;

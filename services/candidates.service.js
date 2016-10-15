@@ -1,6 +1,6 @@
 angular.module('tps').factory('CandidateService', candidateService);
 
-function candidateService(CandidatesConstants){
+function candidateService(CandidatesConstants, UserService){
     var candidateService = {};
 
     candidateService.getAll = getAll;
@@ -24,6 +24,9 @@ function candidateService(CandidatesConstants){
             id = Math.max(id, candidates[i].id + 1);
         }
 
+        var user = UserService
+            .create(username, firstName, lastName, 'candidate', null, "default@candidate.tps.com", password);
+
         var candidate = {
             id: id,
             username: username,
@@ -34,7 +37,8 @@ function candidateService(CandidatesConstants){
             status: status,
             notes: [],
             privateNotes: [],
-            recommendations: []
+            recommendations: [],
+            user: user
         };
 
         candidates.push(candidate);
