@@ -8,6 +8,7 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
     $scope.loginAsAdmin = loginAsAdmin;
     $scope.loginAsStaffUser = loginAsStaffUser;
     $scope.loginAsHiringUser = loginAsHiringUser;
+    $scope.loginAsCandidateUser = loginAsCandidateUser;
     $scope.logout = logout;
 
     $scope.paths = ROUTES;
@@ -38,7 +39,7 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
         $route.reload();
     }
 
-    function loginAsCandidate(){
+    function loginAsCandidateUser(){
         AuthenticationService.login('christoperCandidate', 'password1234');
         $route.reload();
     }

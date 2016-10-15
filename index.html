@@ -86,7 +86,10 @@
 								Home <span class="sr-only">(current)</span>
 							</a>
 						</li>
-						<li ng-class="{active: pathIsActive(paths.CANDIDATES_LIST)}">
+						<li ng-class="{active: pathIsActive(paths.CANDIDATES_LIST)}" ng-show="session.type === 'candidate'">
+							<a ng-click="goTo(paths.CANDIDATES_LIST)" class="clickable">Update Information</a>
+						</li>
+						<li ng-class="{active: pathIsActive(paths.CANDIDATES_LIST)}" ng-hide="session.type === 'candidate'">
 							<a ng-click="goTo(paths.CANDIDATES_LIST)" class="clickable">Candidates</a>
 						</li>
 						<li class="dropdown" ng-hide="session.type === 'hiring' || session.type === 'candidate'"
@@ -98,7 +101,7 @@
 								<li><a ng-click="goTo(paths.USER_LIST)" class="clickable">Users</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						<li class="dropdown" ng-hide="session.type === 'candidate'">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false">Staffing Requests <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -106,7 +109,7 @@
 								<li><a ng-click="goTo(paths.STAFFING_REQUESTS_CREATE)" class="clickable">Create Staffing Request</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						<li class="dropdown" ng-hide="session.type === 'candidate'">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false">Staffing Recommendations <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -152,6 +155,12 @@
 								</li>
 								<li ng-show="session.type === 'hiring'">
 									<a><strong class="text-success">Currently Hiring User Session</strong></a>
+								</li>
+								<li class="clickable" ng-click="loginAsCandidateUser()" ng-hide="session.type === 'candidate'">
+									<a>Switch to Candidate User Session</a>
+								</li>
+								<li ng-show="session.type === 'candidate'">
+									<a><strong class="text-success">Currently Candidate User Session</strong></a>
 								</li>
 								<li role="separator" class="divider"></li>
 								<li class="clickable">
