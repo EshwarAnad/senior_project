@@ -4,4 +4,29 @@
 
 <div ng-show="session.type === 'candidate'">
 	<div class="h1">{{title}}</div>
+	
+	<table class="table table-bordered table-hover">
+		<thead>
+		<tr>
+			<th>Created</th>
+			<th>Company</th>
+			<th>Position</th>
+			<th>Keywords</th>
+			<th>Response</th>
+			<th>Point of Contact</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<tr ng-repeat="recommendation in candidateRecommendations" ng-click="goTo('/staffing/recommendation/' + recommendation.id)"
+		    class="clickable">
+			<td>{{recommendation.created | date : short}}</td>
+			<td>{{recommendation.company.name}}</td>
+			<td>{{recommendation.position || 'SCHEMA NEEDS MOD-ING'}}</td>
+			<td>{{recommendation.request.skillKeywords.toString()}}</td>
+			<td>{{recommendation.position || 'NEED TO DO LOOKUP'}}</td>
+			<td>{{recommendation.staffingUser.username}} ({{recommendation.staffingUser.emailAddress}})</td>
+		</tr>
+		</tbody>
+	</table>
 </div>

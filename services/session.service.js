@@ -18,6 +18,7 @@ function sessionService($rootScope){
         this.hiringCompany = user.hiringCompany;
         this.emailAddress = user.emailAddress;
         this.active = true;
+        this.candidateInfo = user.candidateInfo;
         this.user = Object.assign({}, this);
         $rootScope.session = this;
     };
