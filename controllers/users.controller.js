@@ -13,7 +13,6 @@ function usersController($scope, $location, UserService, ROUTES){
     }
 
     function createUser(){
-        console.log(ROUTES.USER_CREATE);
         $location.path(ROUTES.USER_CREATE);
     }
 }

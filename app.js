@@ -22,6 +22,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'DashboardCtrl',
                 templateUrl: 'views/dashboard.html'
             })
+            .when(ROUTES.CANDIDATES_CREATE, {
+                controller: 'CandidateCreateCtrl',
+                templateUrl: 'views/candidateCreate.html'
+            })
             .when(ROUTES.CANDIDATES_LIST, {
                 controller: 'CandidatesCtrl',
                 templateUrl: 'views/candidates.html'
@@ -121,6 +125,7 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
 
 angular.module('tps.ROUTES', [])
     .constant('ROUTES', {
+        CANDIDATES_CREATE: '/candidates/create',
         CANDIDATES_DETAIL: '/candidate/:id',
         CANDIDATES_LIST: '/candidates',
         HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',
