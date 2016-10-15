@@ -7,6 +7,7 @@ function hiringCompaniesService(HiringCompaniesConstants){
     hiringCompaniesService.get = get;
     hiringCompaniesService.create = create;
     hiringCompaniesService.addUser = addUser;
+    hiringCompaniesService.addStaffingRequest = addStaffingRequest;
 
     var hiringCompanies = HiringCompaniesConstants.hiringCompanies;
 
@@ -48,6 +49,12 @@ function hiringCompaniesService(HiringCompaniesConstants){
         var hiringCompany = get(hiringCompanyId);
 
         hiringCompany.users.push(userObject);
+    }
+
+    function addStaffingRequest(hiringCompanyId, staffingRequest){
+        var hiringCompany = get(hiringCompanyId);
+
+        hiringCompany.staffingRequests.push(staffingRequest);
     }
 
     return hiringCompaniesService;

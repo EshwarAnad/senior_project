@@ -1,6 +1,6 @@
 angular.module('tps').factory('StaffingRequestsService', staffingRequestsService);
 
-function staffingRequestsService(StaffingRequestsConstant){
+function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesService){
     var staffingRequestService = {};
 
     staffingRequestService.getAll = getAll;
@@ -30,7 +30,7 @@ function staffingRequestsService(StaffingRequestsConstant){
             id = Math.max(id, staffingRequests[i].id + 1);
         }
 
-        staffingRequests.push({
+        var staffingRequest = {
             id: id,
             company: companyObj,
             hiringUser: hiringUserObj,
@@ -38,7 +38,11 @@ function staffingRequestsService(StaffingRequestsConstant){
             skillKeywords: skillKeywordsArr,
             notes: notesArr,
             created: new Date()
-        });
+        };
+
+        staffingRequests.push(staffingRequest);
+
+        HiringCompaniesService.addStaffingRequest(hiringUserObj.id, staffingRequest);
     }
 
     return staffingRequestService;
