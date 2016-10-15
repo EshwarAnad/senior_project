@@ -115,13 +115,16 @@
 								<li><a ng-click="goTo(paths.STAFFING_REQUESTS_CREATE)" class="clickable">Create Staffing Request</a></li>
 							</ul>
 						</li>
-						<li class="dropdown" ng-hide="session.type === 'candidate'">
+						<li class="dropdown" ng-hide="session.type === 'candidate' || session.type === 'hiring'">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false">Staffing Recommendations <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a ng-click="goTo(paths.STAFFING_RECOMMENDATIONS_LIST)" class="clickable">View All</a></li>
 								<li><a ng-click="goTo(paths.STAFFING_RECOMMENDATIONS_CREATE_LIST)" class="clickable">Create Staffing Recommendation</a></li>
 							</ul>
+						</li>
+						<li ng-class="{active: pathIsActive(paths.STAFFING_RECOMMENDATIONS_LIST)}" ng-show="session.type === 'hiring'">
+							<a ng-click="goTo(paths.STAFFING_RECOMMENDATIONS_LIST)" class="clickable">Staffing Recommendations</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
