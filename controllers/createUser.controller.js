@@ -15,6 +15,8 @@ function createUserController($scope, $location, UserService, HiringCompaniesSer
     }
 
     function create(){
+        console.log($scope.hiringCompany);
+
         UserService.create($scope.username, $scope.firstName,
             $scope.lastName, $scope.userType, JSON.parse($scope.hiringCompany),
             $scope.emailAddress, $scope.password);

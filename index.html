@@ -135,11 +135,20 @@
 								<li class="clickable" ng-click="loginAsAdmin()" ng-hide="session.type === 'admin'">
 									<a>Switch to Admin User Session</a>
 								</li>
+								<li ng-show="session.type === 'admin'">
+									<a><strong class="text-success">Currently Admin User Session</strong></a>
+								</li>
 								<li class="clickable" ng-click="loginAsStaffUser()" ng-hide="session.type === 'staffing'">
 									<a>Switch to Staff User Session</a>
 								</li>
+								<li ng-show="session.type === 'staffing'">
+									<a><strong class="text-success">Currently Staff User Session</strong></a>
+								</li>
 								<li class="clickable" ng-click="loginAsHiringUser()" ng-hide="session.type === 'hiring'">
 									<a>Switch to Hiring User Session</a>
+								</li>
+								<li ng-show="session.type === 'hiring'">
+									<a><strong class="text-success">Currently Hiring User Session</strong></a>
 								</li>
 								<li role="separator" class="divider"></li>
 								<li class="clickable">
