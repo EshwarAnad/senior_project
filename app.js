@@ -15,7 +15,6 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
     })
 
     .config(function($routeProvider, ROUTES){
-        console.log(ROUTES);
 
         $routeProvider
             .when(ROUTES.HOME, {

@@ -2,6 +2,8 @@ angular.module('tps').constant('CandidatesConstants', {
     list: [
         {
             id: 1000,
+            username: 'andysterks',
+            password: 'password',
             firstName: 'Andy',
             lastName: 'Sterkowitz',
             skills: 'C#, AngularJS, Javascript',
@@ -31,6 +33,8 @@ angular.module('tps').constant('CandidatesConstants', {
         },
         {
             id: 1001,
+            username: 'elonmusk',
+            password: 'password',
             firstName: 'Elon',
             lastName: 'Musk',
             skills: 'Physics, Astrophysics, Rocket Science, Electric Cars',
@@ -45,6 +49,8 @@ angular.module('tps').constant('CandidatesConstants', {
         },
         {
             id: 1002,
+            username: 'michaeljordan',
+            password: 'password',
             firstName: 'Michael',
             lastName: 'Jordan',
             skills: 'Basketball, Dunking',

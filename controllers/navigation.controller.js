@@ -12,7 +12,6 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
 
     $scope.paths = ROUTES;
     this.paths = ROUTES;
-    console.log($scope.paths);
     $scope.session = SessionService;
 
     function goTo(path){
