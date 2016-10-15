@@ -6,6 +6,7 @@ function candidateService(CandidatesConstants, UserService){
     candidateService.getAll = getAll;
     candidateService.getById = getById;
     candidateService.create = create;
+    candidateService.addUserEntity = addUserEntity;
 
     var candidates = CandidatesConstants.list;
 
@@ -14,7 +15,13 @@ function candidateService(CandidatesConstants, UserService){
     }
 
     function getById(){
+        for(var i = 0; i < candidates.length; i++){
+            if(id.toString() === candidates[i].id.toString()){
+                return candidates[i];
+            }
+        }
 
+        return null;
     }
 
     function create(username, password, firstName, lastName, skills, status){
@@ -42,6 +49,12 @@ function candidateService(CandidatesConstants, UserService){
         candidates.push(candidate);
 
         return candidate;
+    }
+
+    function addUserEntity(candidateId, user){
+        candidate = getById(candidateId);
+
+        candidate.user = user;
     }
 
     return candidateService;

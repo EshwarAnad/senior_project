@@ -1,6 +1,6 @@
 angular.module('tps').factory('UserService', userService);
 
-function userService(UsersConstants){
+function userService(UsersConstants, CandidateService){
     var userService = {};
 
     userService.getAll = getAll;
@@ -8,6 +8,7 @@ function userService(UsersConstants){
     userService.getById = getById;
     userService.create = create;
     userService.addCandidateEntity = addCandidateEntity;
+    userService.modifyUserCandidate = modifyUserCandidate;
 
     var users = UsersConstants.users;
 
@@ -64,6 +65,18 @@ function userService(UsersConstants){
         user = getById(id);
 
         user.candidateInfo = candidate;
+    }
+
+    function modifyUserCandidate(userId, password, firstName, lastName, skills, status){
+        var user = getById(userId);
+
+        user.password = password;
+        user.firstName = firstName;
+        user.lastName = lastName;
+        user.candidateInfo.skills = skills;
+        user.candidateInfo.status = status;
+
+        CandidateService.addUserEntity(user.candidateInfo.id, user);
     }
 
     return userService;
