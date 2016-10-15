@@ -44,15 +44,18 @@
 	</div>
 	
 	<div class="col-md-8 col-md-offset-2" ng-if="userType === 'hiring'">
+		<code>{{hiringCompany}}</code>
 		<div class="form-group">
 			<label class="control-label">
 				Hiring Company
 			</label>
-			<select class="form-control" name="hiringCompany" ng-model="hiringCompany">
-				<option ng-repeat="company in hiringCompanies" value="{{company}}">{{company.name}}</option>
+			<select title="hiringCompanySelect" class="form-control" ng-model="hiringCompany" ng-change="assignHiringCompany(hiringCompany)"
+			        ng-options="company as company.name for company in hiringCompanies">
+				<option></option>
 			</select>
 		</div>
 	</div>
+	<code>{{hiringCompany || 'No Hiring Company :-('}}</code>
 	
 	<div class="col-md-8 col-md-offset-2">
 		<div class="form-group">

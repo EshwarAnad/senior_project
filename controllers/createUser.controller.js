@@ -6,6 +6,7 @@ function createUserController($scope, $location, UserService, CandidateUserServi
 
     $scope.goToUser = goToUser;
     $scope.create = create;
+    $scope.assignHiringCompany = assignHiringCompany;
 
     $scope.users = CandidateUserService.getAllUsers();
     $scope.hiringCompanies = HiringCompaniesService.getAll();
@@ -18,11 +19,13 @@ function createUserController($scope, $location, UserService, CandidateUserServi
         console.log($scope.hiringCompany);
 
         UserService.create($scope.username, $scope.firstName,
-            $scope.lastName, $scope.userType, JSON.parse($scope.hiringCompany),
+            $scope.lastName, $scope.userType, $scope.hiringCompany,
             $scope.emailAddress, $scope.password);
 
-        console.log(CandidateUserService.getAllUsers());
-
         $location.path(ROUTES.USER_LIST);
+    }
+
+    function assignHiringCompany(hiringCompany){
+        $scope.hiringCompany = hiringCompany;
     }
 }
