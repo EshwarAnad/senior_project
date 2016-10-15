@@ -26,7 +26,9 @@
 		
 		<tbody>
 		<tr ng-repeat="request in staffingRequests" ng-click="goTo(paths.STAFFING_REQUESTS_DETAIL, ':id', request.id)"
-		    class="clickable">
+		    class="clickable" ng-show="session.type === 'hiring'
+		                                    ? request.company.id.toString() === session.hiringCompany.id.toString()
+		                                    : true">
 			<td>{{request.created | date : short}}</td>
 			<td>{{request.active ? 'Active' : 'Inactive'}}</td>
 			<td>{{request.company.name}}</td>

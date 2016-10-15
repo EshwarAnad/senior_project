@@ -8,6 +8,7 @@ function staffingRequestsController($scope, $location, StaffingRequestsService, 
     $scope.paths = ROUTES;
     $scope.staffingRequests = StaffingRequestsService.getAll();
     console.log($scope.staffingRequests);
+    console.log($scope.session);
 
     function goTo(path, replaceString, replacement){
         if(replacement){
