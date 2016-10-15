@@ -31,7 +31,7 @@
 		</thead>
 		
 		<tbody>
-		<tr ng-repeat="user in users" ng-click="goToUser(user)" class="clickable">
+		<tr ng-repeat="user in users" ng-click="goToUser(user)" class="clickable" ng-hide="user.type ==='candidate'">
 			<td>
 				{{user.username}}
 				<span class="label label-info" ng-show="user.type === 'admin'">Administrator</span>

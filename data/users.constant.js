@@ -39,6 +39,19 @@ angular.module('tps').constant('UsersConstants', {
             hiringCompany: 'SpaceX',
             emailAddress: 'stephen@spacex.com',
             password: 'password1234'
+        },
+        {
+            id: 1004,
+            username: 'christoperCandidate',
+            firstName: 'Christopher',
+            lastName: 'Candidate',
+            type: 'candidate',
+            hiringCompany: null,
+            emailAddress: 'ccandidate@gmail.com',
+            password: 'password1234',
+            candidateInfo: {
+
+            }
         }
     ]
 });

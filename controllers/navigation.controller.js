@@ -38,6 +38,11 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
         $route.reload();
     }
 
+    function loginAsCandidate(){
+        AuthenticationService.login('christoperCandidate', 'password1234');
+        $route.reload();
+    }
+
     function logout(){
         $scope.session.destroy();
         $location.path($scope.navbar.login.path);
