@@ -24,8 +24,8 @@
 	
 	<tbody>
 	<tr ng-repeat="candidate in candidates" ng-click="goToCandidate(candidate)" class="clickable">
-		<td>{{candidate.firstName}}</td>
-		<td>{{candidate.lastName}}</td>
+		<td>{{candidate.user.firstName}}</td>
+		<td>{{candidate.user.lastName}}</td>
 		<td>{{candidate.status}}</td>
 	</tr>
 	</tbody>

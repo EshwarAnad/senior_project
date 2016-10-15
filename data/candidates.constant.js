@@ -2,10 +2,6 @@ angular.module('tps').constant('CandidatesConstants', {
     list: [
         {
             id: 1000,
-            username: 'andysterks',
-            password: 'password',
-            firstName: 'Andy',
-            lastName: 'Sterkowitz',
             skills: 'C#, AngularJS, Javascript',
             status: 'UnemployedJobSearching',
             notes: [
@@ -29,14 +25,20 @@ angular.module('tps').constant('CandidatesConstants', {
             ],
             recommendations: [
 
-            ]
+            ],
+            user: {
+                id: 1006,
+                username: 'andysterks',
+                firstName: 'Andy',
+                lastName: 'Sterkowitz',
+                type: 'candidate',
+                hiringCompany: null,
+                emailAddress: 'andys@gmail.com',
+                password: 'password1234'
+            }
         },
         {
             id: 1001,
-            username: 'elonmusk',
-            password: 'password',
-            firstName: 'Elon',
-            lastName: 'Musk',
             skills: 'Physics, Astrophysics, Rocket Science, Electric Cars',
             status: 'EmployedNotInterested',
             notes: [],
@@ -45,7 +47,17 @@ angular.module('tps').constant('CandidatesConstants', {
             ],
             recommendations: [
 
-            ]
+            ],
+            user: {
+                id: 1006,
+                username: 'elonmusk',
+                firstName: 'Elon',
+                lastName: 'Musk',
+                type: 'candidate',
+                hiringCompany: null,
+                emailAddress: 'elonMusk@teslamotors.com',
+                password: 'password1234'
+            }
         },
         {
             id: 1002,
