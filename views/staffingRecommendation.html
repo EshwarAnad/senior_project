@@ -52,12 +52,27 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Assigned To:</td>
+						<td>Created By:</td>
 						<td>
 							{{staffingRecommendation.staffingUser.username}}
 							<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
 								({{staffingRecommendation.staffingUser.emailAddress}})
 							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Staffing Request Keywords:</td>
+						<td>
+							{{staffingRecommendation.request.skillKeywords.toString()}}
+							<a ng-href="#{{path.STAFFING_REQUESTS_DETAIL.replace(':id', staffingRecommendation.request.id)}}">
+								(Click for Request Details)
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Staffing Request Open Positions:</td>
+						<td>
+							{{staffingRecommendation.request.openPositions}}
 						</td>
 					</tr>
 					<tr>

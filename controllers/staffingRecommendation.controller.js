@@ -1,6 +1,7 @@
 angular.module('tps').controller('StaffingRecommendationCtrl', staffingRecommendationController);
 
-function staffingRecommendationController($scope, $location, staffingRecommendationId, StaffingRecommendationsService){
+function staffingRecommendationController($scope, ROUTES, $location, staffingRecommendationId, StaffingRecommendationsService){
+    $scope.path = ROUTES;
     $scope.notFound = false;
 
     if($scope.session.type !== 'candidate'){
