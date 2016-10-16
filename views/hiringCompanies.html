@@ -1,8 +1,8 @@
-<div ng-show="session.type === 'hiring'" class="text-center">
+<div ng-show="session.type === 'hiring' || session.type === 'candidate'" class="text-center">
 	<ng-include src="'partials/notAuthorized.html'"></ng-include>
 </div>
 
-<div ng-hide="session.type === 'hiring'">
+<div ng-hide="session.type === 'hiring' || session.type === 'candidate'">
 	<div class="h1">{{title}}</div>
 	
 	<div class="well well-lg">
