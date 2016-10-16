@@ -107,19 +107,8 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                 company: {
                     id: 1001,
                     name: 'SpaceX',
-                    users: [
-                        {
-                            id: 1003,
-                            username: 'stephenspacex',
-                            firstName: 'Stephen',
-                            lastName: 'SpaceX',
-                            type: 'hiring',
-                            hiringCompany: 'SpaceX',
-                            emailAddress: 'stephen@spacex.com',
-                            password: 'password1234'
-                        }
-                    ],
-                    notes: [],
+                    userIds: [ 1003 ],
+                    notes: '',
                     active: true
                 },
                 hiringUser: {
@@ -128,28 +117,14 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                     firstName: 'Stephen',
                     lastName: 'SpaceX',
                     type: 'hiring',
-                    hiringCompany: {
-                        id: 1001,
-                        name: 'SpaceX',
-                        users: [
-                            {
-                                id: 1003,
-                                username: 'stephenspacex',
-                                firstName: 'Stephen',
-                                lastName: 'SpaceX',
-                                type: 'hiring',
-                                emailAddress: 'stephen@spacex.com',
-                                password: 'password1234'
-                            }
-                        ],
-                        notes: [],
-                        active: true
-                    },
+                    hiringCompany: 'SpaceX',
                     emailAddress: 'stephen@spacex.com',
                     password: 'password1234'
                 },
                 active: true,
                 skillKeywords: [ 'c#', 'javascript', 'database'],
+                openPositions: 1,
+                notes: [],
                 created: new Date(2016, 8, 6, 23, 12, 1, 3)
             },
             notes: [
@@ -264,6 +239,7 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                 },
                 active: true,
                 skillKeywords: [ 'secretary', 'microsoft office', 'clerical'],
+                openPositions: 5,
                 notes: [
                     {
                         content: 'This needs to get done ASAP.  We\'re in a hurry!',

@@ -21,6 +21,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
             },
             active: true,
             skillKeywords: [ 'c#', 'javascript', 'database'],
+            openPositions: 1,
             notes: [],
             created: new Date(2016, 8, 6, 23, 12, 1, 3)
         },
@@ -45,6 +46,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
             },
             active: true,
             skillKeywords: [ 'secretary', 'microsoft office', 'clerical'],
+            openPositions: 5,
             notes: [
                 {
                     content: 'This needs to get done ASAP.  We\'re in a hurry!',
