@@ -11,16 +11,29 @@
 				<label class="control-label">
 					Company Name
 				</label>
-				<input type="text" class="form-control" name="email" ng-model="hiringCompany.name">
+				<input type="text" class="form-control" name="name" ng-model="hiringCompany.name">
 			</div>
 		</div>
 		
 		<div class="col-md-8 col-md-offset-2">
 			<div class="form-group">
 				<label class="control-label">
-					Active
+					System Status
 				</label>
-				<input type="text" class="form-control" name="email" ng-model="hiringCompany.active">
+				<div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="active" ng-model="hiringCompany.active" ng-value="true">
+							Active
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="active" ng-model="hiringCompany.active" ng-value="false">
+							Inactive
+						</label>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

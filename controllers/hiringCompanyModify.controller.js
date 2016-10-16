@@ -9,10 +9,12 @@ function modifyHiringCompanyController(companyId, $scope, $location, ROUTES, Hir
     $scope.hiringCompany = HiringCompaniesService.get(companyId);
 
     function update(){
+        HiringCompaniesService.modifyHiringCompany(companyId, $scope.hiringCompany.name, $scope.hiringCompany.active)
 
+        $location.path(ROUTES.HIRING_COMPANIES_DETAIL.replace(":id", companyId));
     }
 
     function cancel(){
-        $location.path(ROUTES.HIRING_COMPANIES_DETAIL.replace(":id", companyId))
+        $location.path(ROUTES.HIRING_COMPANIES_DETAIL.replace(":id", companyId));
     }
 }

@@ -8,6 +8,7 @@ function hiringCompaniesService(HiringCompaniesConstants){
     hiringCompaniesService.create = create;
     hiringCompaniesService.addUser = addUser;
     hiringCompaniesService.addStaffingRequest = addStaffingRequest;
+    hiringCompaniesService.modifyHiringCompany = modifyHiringCompany;
 
     var hiringCompanies = HiringCompaniesConstants.hiringCompanies;
 
@@ -55,6 +56,20 @@ function hiringCompaniesService(HiringCompaniesConstants){
         var hiringCompany = get(hiringCompanyId);
 
         hiringCompany.staffingRequests.push(staffingRequest);
+    }
+
+    function modifyHiringCompany(hiringCompanyId, name, status){
+        var hiringCompany = get(hiringCompanyId);
+
+        if(name && name !== ''){
+            hiringCompany.name = name;
+        }
+
+        if(status === true || status === false){
+            hiringCompany.active = status;
+        }
+
+        return hiringCompany;
     }
 
     return hiringCompaniesService;
