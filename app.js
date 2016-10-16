@@ -51,6 +51,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'CandidateRecommendationsCtrl',
                 templateUrl: 'views/candidateRecommendations.html'
             })
+            .when(ROUTES.CANDIDATES_RECOMMENDATION_DETAIL, {
+                controller: 'CandidateRecommendationDetailCtrl',
+                templateUrl: 'views/candidateRecommendationDetail.html'
+            })
             .when(ROUTES.CANDIDATE_UPDATE_INFO, {
                 controller: 'CandidateProfileCtrl',
                 templateUrl: 'views/candidateProfile.html'
@@ -172,6 +176,7 @@ angular.module('tps.ROUTES', [])
         CANDIDATES_LIST: '/candidates',
         CANDIDATES_MODIFY: '/candidates/modify/:id',
         CANDIDATE_RECOMMENDATIONS: '/candidates/recommendations/',
+        CANDIDATES_RECOMMENDATION_DETAIL: '/candidates/recommendation/:id',
         CANDIDATE_UPDATE_INFO: '/candidates/profile',
         HIRING_COMPANIES_CREATE: '/hiringcompanies/create',
         HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',

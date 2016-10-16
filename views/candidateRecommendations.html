@@ -18,8 +18,8 @@
 		</thead>
 		
 		<tbody>
-		<tr ng-repeat="recommendation in candidateRecommendations" ng-click="goTo('/staffing/recommendation/' + recommendation.id)"
-		    class="clickable">
+		<tr ng-repeat="recommendation in candidateRecommendations" ng-click="seeDetails(recommendation)"
+		    class="clickable" >
 			<td>{{recommendation.created | date : short}}</td>
 			<td>{{recommendation.company.name}}</td>
 			<td>{{recommendation.position || 'SCHEMA NEEDS MOD-ING'}}</td>
