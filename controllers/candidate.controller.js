@@ -1,9 +1,10 @@
 angular.module('tps').controller('CandidateCtrl', function($scope, candidateId, CandidatesConstants, $location,
-                                                            $rootScope, StaffingRecommendationsService){
+                                                            $rootScope, StaffingRecommendationsService, ROUTES){
     $scope.title = 'Candidates';
 
     $scope.addNote = addNote;
     $scope.addPrivateNote = addPrivateNote;
+    $scope.modifyCandidate = modifyCandidate;
 
     $scope.staffingRecommendations =
         StaffingRecommendationsService.getForCandidate(candidateId);
@@ -43,5 +44,9 @@ angular.module('tps').controller('CandidateCtrl', function($scope, candidateId, 
         });
 
         $scope.pendingPrivateNote = '';
+    }
+
+    function modifyCandidate(){
+        $location.path(ROUTES.CANDIDATES_MODIFY.replace(":id", candidateId))
     }
 });

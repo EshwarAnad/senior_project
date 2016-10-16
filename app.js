@@ -38,6 +38,15 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'CandidatesCtrl',
                 templateUrl: 'views/candidates.html'
             })
+            .when(ROUTES.CANDIDATES_MODIFY, {
+                controller: 'CandidateModifyCtrl',
+                templateUrl: 'views/candidateProfile.html',
+                resolve: {
+                    candidateId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
+            })
             .when(ROUTES.CANDIDATE_RECOMMENDATIONS, {
                 controller: 'CandidateRecommendationsCtrl',
                 templateUrl: 'views/candidateRecommendations.html'
@@ -161,6 +170,7 @@ angular.module('tps.ROUTES', [])
         CANDIDATES_CREATE: '/candidates/create',
         CANDIDATES_DETAIL: '/candidate/:id',
         CANDIDATES_LIST: '/candidates',
+        CANDIDATES_MODIFY: '/candidates/modify/:id',
         CANDIDATE_RECOMMENDATIONS: '/candidates/recommendations/',
         CANDIDATE_UPDATE_INFO: '/candidates/profile',
         HIRING_COMPANIES_CREATE: '/hiringcompanies/create',
