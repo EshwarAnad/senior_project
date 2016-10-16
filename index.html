@@ -60,6 +60,7 @@
 	<script src="controllers/staffingRecommendations.controller.js"></script>
 	<script src="controllers/staffingRequest.controller.js"></script>
 	<script src="controllers/staffingRequests.controller.js"></script>
+	<script src="controllers/updateProfile.controller.js"></script>
 	<script src="controllers/users.controller.js"></script>
 	<script src="controllers/user.controller.js"></script>
 
@@ -128,7 +129,7 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
+						<li class="dropdown" ng-class="{active: pathIsActive(paths.PROFILE)}">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							   aria-expanded="false">
 								<i class="glyphicon glyphicon-user"></i>
@@ -145,7 +146,8 @@
 								</li>
 							</ul>
 							<ul class="dropdown-menu" ng-if="session.active">
-								<li class="clickable" ng-hide="session.type === 'candidate'"><a>Profile</a></li>
+								<li class="clickable" ng-hide="session.type === 'candidate'" ng-class="{active: pathIsActive(paths.PROFILE)}"
+								    ng-click="goTo(paths.PROFILE)"><a>Profile</a></li>
 								<li role="separator" class="divider" ng-hide="session.type === 'candidate'"></li>
 								<li class="clickable" ng-click="loginAsAdmin()" ng-hide="session.type === 'admin'">
 									<a>Switch to Admin User Session</a>

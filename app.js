@@ -67,6 +67,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'LoginCtrl',
                 templateUrl: 'views/login.html'
             })
+            .when(ROUTES.PROFILE, {
+                controller: 'UpdateProfileCtrl',
+                templateUrl: 'views/updateProfile.html'
+            })
             .when(ROUTES.STAFFING_RECOMMENDATIONS_LIST, {
                 controller: 'StaffingRecommendations',
                 templateUrl: 'views/staffingRecommendations.html'
@@ -146,6 +150,7 @@ angular.module('tps.ROUTES', [])
         HIRING_COMPANIES_LIST: '/hiringcompanies',
         HOME: '/',
         LOGIN: '/login',
+        PROFILE: '/profile',
         STAFFING_RECOMMENDATIONS_CREATE_DETAIL: '/staffing/recommendations/create/detail/:staffingRequestId',
         STAFFING_RECOMMENDATIONS_CREATE_LIST: '/staffing/recommendations/create/',
         STAFFING_RECOMMENDATIONS_DETAIL: '/staffing/recommendation/:id',
