@@ -1,7 +1,7 @@
 angular.module('tps').controller('UpdateProfileCtrl', updateProfileController);
 
-function updateProfileController($scope, $location, ROUTES, CandidateUserService){
-    $scope.title = 'Update User Profile';
+function updateProfileController($scope, $location, ROUTES, CandidateUserService, SessionService){
+    $scope.title = 'Update Profile';
 
     $scope.user = CandidateUserService.getUserById($scope.session.id);
 
@@ -9,8 +9,10 @@ function updateProfileController($scope, $location, ROUTES, CandidateUserService
     $scope.cancel = cancel;
 
     function update(){
-        CandidateUserService.modifyUserOnly($scope.user.id, $scope.username, $scope.user.emailAddress,
+        var user = CandidateUserService.modifyUserOnly($scope.user.id, $scope.username, $scope.user.emailAddress,
             $scope.user.password, $scope.user.firstName, $scope.user.lastName);
+        SessionService.destroy();
+        SessionService.create(user);
         $location.path(ROUTES.HOME);
     }
 

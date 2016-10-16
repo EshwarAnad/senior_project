@@ -115,6 +115,8 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
         if(lastName){
             user.lastName = lastName;
         }
+
+        return user;
     }
 
     // CANDIDATE FUNCTIONS
