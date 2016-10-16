@@ -1,6 +1,6 @@
 angular.module('tps').factory('StaffingRecommendationsService', staffingRecommendationsService);
 
-function staffingRecommendationsService(StaffingRecommendationsConstant){
+function staffingRecommendationsService(StaffingRecommendationsConstant, $rootScope){
     var staffingRecommendationsService = {};
 
     staffingRecommendationsService.getAll = getAll;
@@ -17,7 +17,16 @@ function staffingRecommendationsService(StaffingRecommendationsConstant){
     function getById(id){
         for(var i = 0; i < staffingRecommendations.length; i++){
             if(id.toString() === staffingRecommendations[i].id.toString()){
-                return staffingRecommendations[i];
+                var recommendation = staffingRecommendations[i];
+                var session = $rootScope.session;
+
+                if((session.type === 'admin' || session.type === 'staffing'
+                    || recommendation.company.id.toString()
+                    === session.hiringCompany.id.toString())){
+                    return recommendation
+                } else {
+                    return null;
+                }
             }
         }
 

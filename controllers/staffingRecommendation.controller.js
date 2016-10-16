@@ -1,9 +1,16 @@
 angular.module('tps').controller('StaffingRecommendationCtrl', staffingRecommendationController);
 
 function staffingRecommendationController($scope, $location, staffingRecommendationId, StaffingRecommendationsService){
-    $scope.staffingRecommendation = StaffingRecommendationsService.getById(staffingRecommendationId);
+    $scope.notFound = false;
 
-    $scope.title = 'Staffing Recommendation for ' + $scope.staffingRecommendation.company.name;
+    if($scope.session.type !== 'candidate'){
+        $scope.staffingRecommendation = StaffingRecommendationsService.getById(staffingRecommendationId);
+        if(!$scope.staffingRecommendation){
+            $scope.notFound = true;
+        } else {
+            $scope.title = 'Staffing Recommendation for ' + $scope.staffingRecommendation.company.name;
+        }
+    }
 
     $scope.goTo = goTo;
 

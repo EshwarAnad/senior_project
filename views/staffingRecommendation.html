@@ -7,7 +7,7 @@
 	</div>
 </div>
 
-<div ng-hide="session.type === 'candidate'">
+<div ng-hide="session.type === 'candidate' || notFound">
 	<div>
 		<a ng-click="goTo('/staffing/recommendations')" class="clickable">
 			<i class="glyphicon glyphicon-arrow-left"></i>
