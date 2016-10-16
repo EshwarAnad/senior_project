@@ -1,6 +1,6 @@
 angular.module('tps').factory('StaffingRequestsService', staffingRequestsService);
 
-function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesService){
+function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesService, $rootScope){
     var staffingRequestService = {};
 
     staffingRequestService.getAll = getAll;
@@ -16,7 +16,15 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
     function getById(id){
         for(var i = 0; i < staffingRequests.length; i++){
             if(id.toString() === staffingRequests[i].id.toString()){
-                return staffingRequests[i];
+                var request = staffingRequests[i];
+                var sesh = $rootScope.session;
+
+                if(sesh.type === 'admin' || sesh.type === 'staffing'
+                    || request.company.id.toString() === sesh.hiringCompany.id.toString()){
+                    return request
+                } else {
+                    return null;
+                }
             }
         }
 
