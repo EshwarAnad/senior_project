@@ -1,67 +1,72 @@
-<div>
-	<a ng-click="goTo('/staffing/recommendations')" class="clickable">
-		<i class="glyphicon glyphicon-arrow-left"></i>
-		Return to Staffing Recommendations List Page
-	</a>
+<div ng-show="session.type === 'candidate'" class="text-center">
+	<ng-include src="'partials/notAuthorized.html'"></ng-include>
 </div>
 
-<div class="col-md-8 col-md-offset-2">
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h1 class="panel-title">
-				{{title}}
-			</h1>
-		</div>
-		<div class="panel panel-body">
-			<div class="well-lg">
-				<div class="btn-group">
-					<button class="btn btn-default" ng-show="session.type === 'admin'"
-					        ng-click="staffingRecommendation.active = !staffingRecommendation.active">
-						{{staffingRecommendation.active ? 'Deactivate' : 'Activate' }}
-					</button>
-					<button class="btn btn-default" ng-show="session.type === 'admin'">
-						Re-Assign Staffing User
-					</button>
-				</div>
+<div ng-hide="session.type === 'candidate'">
+	<div>
+		<a ng-click="goTo('/staffing/recommendations')" class="clickable">
+			<i class="glyphicon glyphicon-arrow-left"></i>
+			Return to Staffing Recommendations List Page
+		</a>
+	</div>
+	
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h1 class="panel-title">
+					{{title}}
+				</h1>
 			</div>
-			
-			<table class="table table-bordered">
-				<tbody>
-				<tr>
-					<td>Created:</td>
-					<td>{{staffingRecommendation.created | date: short}}</td>
-				</tr>
-				<tr>
-					<td>Company:</td>
-					<td>{{staffingRecommendation.company.name}}</td>
-				</tr>
-				<tr>
-					<td>Active:</td>
-					<td>
-						{{staffingRecommendation.active ? 'True': 'False'}}
-					</td>
-				</tr>
-				<tr>
-					<td>Assigned To:</td>
-					<td>
-						{{staffingRecommendation.staffingUser.username}}
-						<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
-							({{staffingRecommendation.staffingUser.emailAddress}})
-						</a>
-					</td>
-				</tr>
-				<tr>
-					<td>Candidates</td>
-					<td>
-						<p ng-repeat="candidate in staffingRecommendation.candidates">
-							{{candidate.details.user.firstName + ' ' + candidate.details.user.lastName}}
-							<button class="btn btn-xs btn-default"
-							        ng-click="candidate.showDetails = !candidate.showDetails">
-								<i class="glyphicon glyphicon-info-sign"></i>
-								View Details
-							</button>
-							<br>
-							<span ng-show="candidate.showDetails">
+			<div class="panel panel-body">
+				<div class="well-lg">
+					<div class="btn-group">
+						<button class="btn btn-default" ng-show="session.type === 'admin'"
+						        ng-click="staffingRecommendation.active = !staffingRecommendation.active">
+							{{staffingRecommendation.active ? 'Deactivate' : 'Activate' }}
+						</button>
+						<button class="btn btn-default" ng-show="session.type === 'admin'">
+							Re-Assign Staffing User
+						</button>
+					</div>
+				</div>
+				
+				<table class="table table-bordered">
+					<tbody>
+					<tr>
+						<td>Created:</td>
+						<td>{{staffingRecommendation.created | date: short}}</td>
+					</tr>
+					<tr>
+						<td>Company:</td>
+						<td>{{staffingRecommendation.company.name}}</td>
+					</tr>
+					<tr>
+						<td>Active:</td>
+						<td>
+							{{staffingRecommendation.active ? 'True': 'False'}}
+						</td>
+					</tr>
+					<tr>
+						<td>Assigned To:</td>
+						<td>
+							{{staffingRecommendation.staffingUser.username}}
+							<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
+								({{staffingRecommendation.staffingUser.emailAddress}})
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Candidates</td>
+						<td>
+							<p ng-repeat="candidate in staffingRecommendation.candidates">
+								{{candidate.details.user.firstName + ' ' + candidate.details.user.lastName}}
+								<button class="btn btn-xs btn-default"
+								        ng-click="candidate.showDetails = !candidate.showDetails">
+									<i class="glyphicon glyphicon-info-sign"></i>
+									View Details
+								</button>
+								<br>
+								<span ng-show="candidate.showDetails">
 								<b>Candidate Response:</b>
 								<i class="glyphicon glyphicon-thumbs-up text-success"
 								   ng-show="candidate.candidateResponse === 'yes'"></i>
@@ -85,11 +90,12 @@
 								   && candidate.hiringCompanyResponse !== 'yes'">(Awaiting Response)</span>
 								<br>
 							</span>
-						</p>
-					</td>
-				</tr>
-				</tbody>
-			</table>
+							</p>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>
