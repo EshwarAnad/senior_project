@@ -22,9 +22,15 @@
 		    class="clickable" >
 			<td>{{recommendation.created | date : short}}</td>
 			<td>{{recommendation.company.name}}</td>
-			<td>{{recommendation.position || 'SCHEMA NEEDS MOD-ING'}}</td>
+			<td>{{recommendation.request.positionName}}</td>
 			<td>{{recommendation.request.skillKeywords.toString()}}</td>
-			<td>{{recommendation.position || 'NEED TO DO LOOKUP'}}</td>
+			<td>
+				<span class="label" ng-class="{'label-success': recommendation.getCandidateStatusById(session.candidateInfo.id) === 'yes',
+				'label-danger': recommendation.getCandidateStatusById(session.candidateInfo.id) === 'no',
+				'label-warning': recommendation.getCandidateStatusById(session.candidateInfo.id) !== 'yes' && recommendation.getCandidateStatusById(session.candidateInfo.id) !== 'no'}">
+					{{recommendation.getCandidateStatusById(session.candidateInfo.id).toUpperCase()}}
+				</span>
+			</td>
 			<td>{{recommendation.staffingUser.username}} ({{recommendation.staffingUser.emailAddress}})</td>
 		</tr>
 		</tbody>

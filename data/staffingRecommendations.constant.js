@@ -217,7 +217,7 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                             password: 'password1234'
                         }
                     },
-                    candidateResponse: null,
+                    candidateResponse: "yes",
                     hiringCompanyResponse: null
                 }
             ],
