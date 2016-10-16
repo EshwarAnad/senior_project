@@ -20,48 +20,64 @@
 						</h1>
 					</div>
 					<div class="panel panel-body">
+						<div class="well well-lg">
+							<div class="form-group">
+								<label class="control-label">
+									Are you interested in this job recommendation?
+								</label>
+								<div class="btn-group btn-lg">
+									<button class="btn btn-default" ng-click="response = 'yes'" ng-class="{active: response === 'yes'}">
+										YES
+									</button>
+									<button class="btn btn-default" ng-click="response = 'no'" ng-class="{active: response === 'no'}">
+										NO
+									</button>
+									<button class="btn btn-default" ng-click="response = null" ng-class="{active: response !== 'yes' && response !== 'no'}">
+										UNDECIDED
+									</button>
+								</div>
+							</div>
+						</div>
+						
 						<table class="table table-bordered">
 							<tbody>
 							<tr>
-								<td>Created:</td>
-								<td>{{staffingRecommendation.created | date: short}}</td>
-							</tr>
-							<tr>
 								<td>Company:</td>
-								<td>{{staffingRecommendation.company.name}}</td>
+								<td>{{recommendation.company.name}}</td>
 							</tr>
 							<tr>
 								<td>Position:</td>
-								<td>{{staffingRecommendation.company.name}}</td>
+								<td>{{recommendation.position}}</td>
+							</tr>
+							<tr>
+								<td>Created:</td>
+								<td>{{recommendation.created | date: short}}</td>
 							</tr>
 							<tr>
 								<td>Active:</td>
 								<td>
-									{{staffingRecommendation.active ? 'True': 'False'}}
+									{{recommendation.active ? 'True': 'False'}}
 								</td>
 							</tr>
 							<tr>
 								<td>Created By:</td>
 								<td>
-									{{staffingRecommendation.staffingUser.username}}
-									<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
-										({{staffingRecommendation.staffingUser.emailAddress}})
+									{{recommendation.staffingUser.firstName + ' ' + recommendation.staffingUser.lastName}}
+									<a ng-href="mailto:{{recommendation.staffingUser.emailAddress}}">
+										({{recommendation.staffingUser.emailAddress}})
 									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>Staffing Request Keywords:</td>
 								<td>
-									{{staffingRecommendation.request.skillKeywords.toString()}}
-									<a ng-href="#{{path.STAFFING_REQUESTS_DETAIL.replace(':id', staffingRecommendation.request.id)}}">
-										(Click for Request Details)
-									</a>
+									{{recommendation.request.skillKeywords.toString()}}
 								</td>
 							</tr>
 							<tr>
 								<td>Staffing Request Open Positions:</td>
 								<td>
-									{{staffingRecommendation.request.openPositions}}
+									{{recommendation.request.openPositions}}
 								</td>
 							</tr>
 							</tbody>

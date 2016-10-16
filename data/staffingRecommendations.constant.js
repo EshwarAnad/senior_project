@@ -215,7 +215,9 @@ angular.module('tps').constant('StaffingRecommendationsConstant', {
                             emailAddress: 'ccandidate@gmail.com',
                             password: 'password1234'
                         }
-                    }
+                    },
+                    candidateResponse: null,
+                    hiringCompanyResponse: null
                 }
             ],
             request: {

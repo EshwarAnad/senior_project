@@ -10,20 +10,6 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
 
     var staffingRecommendations = StaffingRecommendationsConstant.staffingRecommendations;
 
-    function refreshRecommendations(){
-        for(var i = 0; i < staffingRecommendations.length; i++){
-            for(var j = 0; j < staffingRecommendations[i].candidates[j].length; j++){
-                var candidate = staffingRecommendations[i].candidates[j];
-
-                candidate.details = CandidateUserService.getCandidateById(candidate.details.id);
-            }
-            /*staffingRecommendations[i].candidates.forEach(function(currentValue, index, arr){
-             staffingRecommendations[i].candidates[index] =
-             CandidateUserService.getCandidateById(currentValue.id);
-             })*/
-        }
-    }
-
     function getAll(){
         return staffingRecommendations;
     }
@@ -32,6 +18,20 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
         for(var i = 0; i < staffingRecommendations.length; i++){
             if(id.toString() === staffingRecommendations[i].id.toString()){
                 var recommendation = staffingRecommendations[i];
+
+                /* TEST */
+
+                recommendation.getCandidateStatusById = function(candidateId){
+                    console.log(this);
+                    for(var k = 0; k < this.candidates.length; k++){
+                        if(this.candidates[k].details.id.toString() === candidateId.toString()){
+                            return this.candidates[k].candidateResponse;
+                        }
+                    }
+                };
+
+                /* */
+
                 var session = $rootScope.session;
 
                 /* TEST */

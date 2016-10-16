@@ -6,7 +6,12 @@ function candidatesRecommendationDetailController(recommendationId, $scope, $loc
     $scope.update = update;
     $scope.cancel = cancel;
 
-    $scope.recommendation = StaffingRecommendationsService.getById(recommendationId);
+    if($scope.session.type === 'candidate'){
+        $scope.recommendation = StaffingRecommendationsService.getById(recommendationId);
+        $scope.response = $scope.recommendation.getCandidateStatusById($scope.session.candidateInfo.id);
+        console.log($scope.recommendation);
+        console.log($scope.response);
+    }
 
     function update(){
 
