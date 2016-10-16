@@ -12,6 +12,14 @@
 	
 	<div class="h1 col-md-8 col-md-offset-2">{{title}}</div>
 	
+	<div class="h1 col-md-8 col-md-offset-2">
+		<div class="form-group" ng-show="session.type === 'admin'">
+			<div class="btn-group btn-lg">
+				<button class="btn btn-primary" ng-click="modifyHiringCompany()">Modify Hiring Company</button>
+			</div>
+		</div>
+	</div>
+	
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-info">
 			<div class="panel-heading">

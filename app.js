@@ -54,6 +54,15 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'HiringCompaniesCtrl',
                 templateUrl: 'views/hiringCompanies.html'
             })
+            .when(ROUTES.HIRING_COMPANIES_MODIFY, {
+                controller: 'ModifyHiringCompanyCtrl',
+                templateUrl: 'views/modifyHiringCompany.html',
+                resolve: {
+                    companyId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
+            })
             .when(ROUTES.HIRING_COMPANIES_DETAIL, {
                 controller: 'HiringCompanyCtrl',
                 templateUrl: 'views/hiringCompany.html',
@@ -157,6 +166,7 @@ angular.module('tps.ROUTES', [])
         HIRING_COMPANIES_CREATE: '/hiringcompanies/create',
         HIRING_COMPANIES_DETAIL: '/hiringcompany/:id',
         HIRING_COMPANIES_LIST: '/hiringcompanies',
+        HIRING_COMPANIES_MODIFY: '/hiringcompanies/modify/:id',
         HOME: '/',
         LOGIN: '/login',
         PROFILE: '/profile',
