@@ -8,6 +8,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
     userCandidateService.getUserByUserName = getUserByUsername;
     userCandidateService.getUserById = getUserById;
     userCandidateService.createUser = createUser;
+    userCandidateService.getCandidateUser = getCandidateUser;
     userCandidateService.addCandidateEntityToUser = addCandidateEntityToUser;
     userCandidateService.modifyUserCandidate = modifyUserCandidate;
     userCandidateService.modifyUserOnly = modifyUserOnly;
@@ -75,6 +76,18 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
         return user;
     }
 
+    function getCandidateUser(candidateId){
+        var candidate = getCandidateById(candidateId);
+
+        var user = getUserById(candidateId);
+        candidate.user = user;
+        user.candidateInfo = candidate;
+
+        console.log(user);
+
+        return user;
+    }
+
     function addCandidateEntityToUser(id, candidate){
         user = getUserById(id);
 
@@ -82,6 +95,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
     }
 
     function modifyUserCandidate(userId, password, firstName, lastName, skills, status){
+        console.log(candidates);
         var user = getUserById(userId);
 
         user.password = password;
@@ -122,6 +136,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
     // CANDIDATE FUNCTIONS
 
     function getAllCandidates(){
+        console.log(candidates);
         return candidates;
     }
 

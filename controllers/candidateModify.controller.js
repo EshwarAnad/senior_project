@@ -6,10 +6,7 @@ function candidateModifyController(candidateId, $scope, $location, ROUTES, Candi
     $scope.update = update;
     $scope.cancel = cancel;
 
-    $scope.candidate = CandidateUserService.getCandidateById(candidateId);
-
-    $scope.candidateUser = $scope.candidate.user;
-    $scope.candidate.user.candidateInfo = $scope.candidate;
+    $scope.candidateUser = CandidateUserService.getCandidateUser(candidateId);
 
     function update(){
         CandidateUserService.modifyUserCandidate($scope.candidateUser.id, $scope.candidateUser.password,
