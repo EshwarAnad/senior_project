@@ -9,6 +9,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
                 notes: '',
                 active: true
             },
+            positionName: 'Backend Software Developer',
             hiringUser: {
                 id: 1003,
                 username: 'stephenspacex',
@@ -34,6 +35,7 @@ angular.module('tps').constant('StaffingRequestsConstant', {
                 notes: '',
                 active: true
             },
+            positionName: 'Associate Secretary',
             hiringUser: {
                 id: 1002,
                 username: 'henryhiring',
