@@ -10,6 +10,10 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
     var staffingRequests = StaffingRequestsConstant.staffingRequests;
 
     function getAll(){
+        /*for(var i = 0; i < staffingRequests.length; i++){
+            staffingRequests[i];
+        }*/
+
         return staffingRequests;
     }
 

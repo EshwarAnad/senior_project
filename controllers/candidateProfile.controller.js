@@ -14,6 +14,8 @@ function candidateProfileController($scope, UserService, $location, ROUTES){
         UserService.modifyUserCandidate($scope.candidateUser.id, $scope.candidateUser.password,
             $scope.candidateUser.firstName, $scope.candidateUser.lastName,
             $scope.candidateUser.candidateInfo.skills, $scope.candidateUser.candidateInfo.status)
+
+        $location.path(ROUTES.HOME);
     }
 
     function cancel(){
