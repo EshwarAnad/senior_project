@@ -2,6 +2,7 @@ angular.module('tps').controller('UpdateProfileCtrl', updateProfileController);
 
 function updateProfileController($scope, $location, ROUTES, CandidateUserService, SessionService){
     $scope.title = 'Update Profile';
+    $scope.modifyUser = false;
 
     $scope.user = CandidateUserService.getUserById($scope.session.id);
 

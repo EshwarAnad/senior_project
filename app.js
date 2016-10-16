@@ -123,13 +123,22 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                 controller: 'CreateUserCtrl',
                 templateUrl: 'views/createUser.html'
             })
+            .when(ROUTES.USER_DETAIL, {
+                controller: 'UserCtrl',
+                templateUrl: 'views/user.html',
+                resolve: {
+                    userId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
+            })
             .when(ROUTES.USER_LIST, {
                 controller: 'UsersCtrl',
                 templateUrl: 'views/users.html'
             })
-            .when(ROUTES.USER_DETAIL, {
-                controller: 'UserCtrl',
-                templateUrl: 'views/user.html',
+            .when(ROUTES.USER_MODIFY, {
+                controller: 'UserModifyCtrl',
+                templateUrl: 'views/updateProfile.html',
                 resolve: {
                     userId: function($route){
                         return $route.current.params.id;
@@ -160,5 +169,6 @@ angular.module('tps.ROUTES', [])
         STAFFING_REQUESTS_LIST: '/staffing/requests/',
         USER_DETAIL: '/user/:id',
         USER_LIST: '/users',
-        USER_CREATE: '/users/create'
+        USER_CREATE: '/users/create',
+        USER_MODIFY: '/users/modify/:id'
     });
