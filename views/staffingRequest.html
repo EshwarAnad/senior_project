@@ -1,8 +1,13 @@
-<div ng-show="session.type === 'candidate'" class="text-center">
-	<ng-include src="'partials/notAuthorized.html'"></ng-include>
+<div ng-show="session.type === 'candidate' || notFound" class="text-center">
+	<div ng-show="notFound">
+		<h1 class="text-danger">Staffing Recommendation Not Found!</h1>
+	</div>
+	<div ng-hide="notFound">
+		<ng-include src="'partials/notAuthorized.html'"></ng-include>
+	</div>
 </div>
 
-<div ng-hide="session.type === 'candidate'">
+<div ng-hide="session.type === 'candidate' || notFound">
 	<div>
 		<a ng-click="goTo('/staffing/requests')" class="clickable">
 			<i class="glyphicon glyphicon-arrow-left"></i>
