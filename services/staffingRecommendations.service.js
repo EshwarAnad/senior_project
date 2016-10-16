@@ -1,6 +1,6 @@
 angular.module('tps').factory('StaffingRecommendationsService', staffingRecommendationsService);
 
-function staffingRecommendationsService(StaffingRecommendationsConstant, $rootScope){
+function staffingRecommendationsService(StaffingRecommendationsConstant, $rootScope, CandidateUserService){
     var staffingRecommendationsService = {};
 
     staffingRecommendationsService.getAll = getAll;
@@ -9,6 +9,20 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
     staffingRecommendationsService.getForCandidate = getForCandidate;
 
     var staffingRecommendations = StaffingRecommendationsConstant.staffingRecommendations;
+
+    function refreshRecommendations(){
+        for(var i = 0; i < staffingRecommendations.length; i++){
+            for(var j = 0; j < staffingRecommendations[i].candidates[j].length; j++){
+                var candidate = staffingRecommendations[i].candidates[j];
+
+                candidate.details = CandidateUserService.getCandidateById(candidate.details.id);
+            }
+            /*staffingRecommendations[i].candidates.forEach(function(currentValue, index, arr){
+             staffingRecommendations[i].candidates[index] =
+             CandidateUserService.getCandidateById(currentValue.id);
+             })*/
+        }
+    }
 
     function getAll(){
         return staffingRecommendations;
@@ -19,6 +33,14 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
             if(id.toString() === staffingRecommendations[i].id.toString()){
                 var recommendation = staffingRecommendations[i];
                 var session = $rootScope.session;
+
+                /* TEST */
+                for(var j = 0; j < recommendation.candidates.length; j++){
+                    recommendation.candidates[j].details =
+                        CandidateUserService.getCandidateById(recommendation.candidates[j].details.id);
+                }
+
+                 /*     */
 
                 if((session.type === 'admin' || session.type === 'staffing'
                     || recommendation.company.id.toString()
