@@ -1,1 +1,87 @@
-<div class="h1">{{title}}</div>
+<div ng-show="session.type !== 'candidate'" class="text-center">
+	<ng-include src="'partials/notAuthorized.html'"></ng-include>
+</div>
+
+<div ng-show="session.type === 'candidate'">
+	<div>
+		<a ng-click="cancel()" class="clickable">
+			<i class="glyphicon glyphicon-arrow-left"></i>
+			Return to Job Recommendations List Page
+		</a>
+	</div>
+	
+	<div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h1 class="panel-title">
+							{{title}}
+						</h1>
+					</div>
+					<div class="panel panel-body">
+						<table class="table table-bordered">
+							<tbody>
+							<tr>
+								<td>Created:</td>
+								<td>{{staffingRecommendation.created | date: short}}</td>
+							</tr>
+							<tr>
+								<td>Company:</td>
+								<td>{{staffingRecommendation.company.name}}</td>
+							</tr>
+							<tr>
+								<td>Position:</td>
+								<td>{{staffingRecommendation.company.name}}</td>
+							</tr>
+							<tr>
+								<td>Active:</td>
+								<td>
+									{{staffingRecommendation.active ? 'True': 'False'}}
+								</td>
+							</tr>
+							<tr>
+								<td>Created By:</td>
+								<td>
+									{{staffingRecommendation.staffingUser.username}}
+									<a ng-href="mailto:{{staffingRecommendation.staffingUser.emailAddress}}">
+										({{staffingRecommendation.staffingUser.emailAddress}})
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Staffing Request Keywords:</td>
+								<td>
+									{{staffingRecommendation.request.skillKeywords.toString()}}
+									<a ng-href="#{{path.STAFFING_REQUESTS_DETAIL.replace(':id', staffingRecommendation.request.id)}}">
+										(Click for Request Details)
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Staffing Request Open Positions:</td>
+								<td>
+									{{staffingRecommendation.request.openPositions}}
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<hr>
+				
+				<div class="form-actions">
+					<div class="pull-right">
+						<button class="btn btn-lg btn-primary" ng-click="update()">Update</button>
+						<button class="btn btn-lg btn-default" ng-click="cancel()">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

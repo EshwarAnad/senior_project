@@ -53,7 +53,12 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
             })
             .when(ROUTES.CANDIDATES_RECOMMENDATION_DETAIL, {
                 controller: 'CandidateRecommendationDetailCtrl',
-                templateUrl: 'views/candidateRecommendationDetail.html'
+                templateUrl: 'views/candidateRecommendationDetail.html',
+                resolve: {
+                    recommendationId: function($route){
+                        return $route.current.params.id;
+                    }
+                }
             })
             .when(ROUTES.CANDIDATE_UPDATE_INFO, {
                 controller: 'CandidateProfileCtrl',

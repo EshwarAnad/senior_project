@@ -42,7 +42,7 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
 
                  /*     */
 
-                if((session.type === 'admin' || session.type === 'staffing'
+                if((session.type === 'admin' || session.type === 'staffing' || session.type === 'candidate'
                     || recommendation.company.id.toString()
                     === session.hiringCompany.id.toString())){
                     return recommendation
