@@ -28,7 +28,7 @@
 				<span class="label" ng-class="{'label-success': recommendation.getCandidateStatusById(session.candidateInfo.id) === 'yes',
 				'label-danger': recommendation.getCandidateStatusById(session.candidateInfo.id) === 'no',
 				'label-warning': recommendation.getCandidateStatusById(session.candidateInfo.id) !== 'yes' && recommendation.getCandidateStatusById(session.candidateInfo.id) !== 'no'}">
-					{{recommendation.getCandidateStatusById(session.candidateInfo.id).toUpperCase()}}
+					{{recommendation.getCandidateStatusById(session.candidateInfo.id).toUpperCase() || 'AWAITING RESPONSE'}}
 				</span>
 			</td>
 			<td>{{recommendation.staffingUser.username}} ({{recommendation.staffingUser.emailAddress}})</td>

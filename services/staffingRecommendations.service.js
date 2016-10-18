@@ -22,7 +22,6 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
                 /* TEST */
 
                 recommendation.getCandidateStatusById = function(candidateId){
-                    console.log(this);
                     for(var k = 0; k < this.candidates.length; k++){
                         if(this.candidates[k].details.id.toString() === candidateId.toString()){
                             return this.candidates[k].candidateResponse;
@@ -110,7 +109,6 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
                     recommendation.myCurrentResponse = staffingRecommendations[i].candidates[j].candidateResponse;
 
                     recommendation.getCandidateStatusById = function(candidateId){
-                        console.log(this);
                         for(var k = 0; k < this.candidates.length; k++){
                             if(this.candidates[k].details.id.toString() === candidateId.toString()){
                                 return this.candidates[k].candidateResponse;
