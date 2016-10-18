@@ -14,7 +14,17 @@ function candidatesRecommendationDetailController(recommendationId, $scope, $loc
     }
 
     function update(){
+        var candidateRecommendationId;
 
+        for(var i = 0; i < $scope.recommendation.candidates.length; i++){
+            if($scope.recommendation.candidates[i].details.id.toString() === $scope.session.candidateInfo.id.toString()){
+                candidateRecommendationId = $scope.recommendation.candidates[i].id;
+            }
+        }
+
+        StaffingRecommendationsService.updateCandidateResponse($scope.recommendation.id, candidateRecommendationId, $scope.response)
+
+        $location.path(ROUTES.CANDIDATE_RECOMMENDATIONS);
     }
 
     function cancel(){

@@ -7,6 +7,7 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
     staffingRecommendationsService.getById = getById;
     staffingRecommendationsService.create = create;
     staffingRecommendationsService.getForCandidate = getForCandidate;
+    staffingRecommendationsService.updateCandidateResponse = updateCandidateResponse;
 
     var staffingRecommendations = StaffingRecommendationsConstant.staffingRecommendations;
 
@@ -122,6 +123,18 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
         }
 
         return recommendations;
+    }
+
+    function updateCandidateResponse(recommendationId, candidateRecommendationId, response){
+        var recommendation = getById(recommendationId);
+
+        for(var i = 0; i < recommendation.candidates.length; i++){
+            if(recommendation.candidates[i].id === candidateRecommendationId){
+                recommendation.candidates[i].candidateResponse = response;
+            }
+        }
+
+        return recommendation;
     }
 
     return staffingRecommendationsService;
