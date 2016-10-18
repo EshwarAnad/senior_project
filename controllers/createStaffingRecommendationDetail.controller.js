@@ -38,7 +38,7 @@ function createStaffingRecommendationDetailController(staffingRequestId, $scope,
         }
 
         StaffingRecommendationsService.create($scope.staffingRequest.company,
-            $rootScope.session, candidatesToAdd, $scope.staffingRequest,
+            $rootScope.session.user, candidatesToAdd, $scope.staffingRequest,
             []);
 
         $location.path(ROUTES.STAFFING_RECOMMENDATIONS_LIST);

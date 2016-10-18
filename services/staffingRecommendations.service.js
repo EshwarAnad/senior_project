@@ -83,9 +83,6 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
             notes: notesArr,
             created: new Date()
         });
-
-        console.log('Take a look at the newly create rec');
-        console.log(staffingRecommendations);
     }
 
     function getId(){
