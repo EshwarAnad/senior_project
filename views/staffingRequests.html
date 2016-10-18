@@ -34,7 +34,11 @@
 		                                    ? request.company.id.toString() === session.hiringCompany.id.toString()
 		                                    : true">
 			<td>{{request.created | date : short}}</td>
-			<td>{{request.active ? 'Active' : 'Inactive'}}</td>
+			<td>
+				<span class="label" ng-class="{'label-success': request.active, 'label-danger': !request.active}">
+				{{request.active ? 'Active' : 'Inactive'}}
+				</span>
+			</td>
 			<td>{{request.company.name}}</td>
 			<td>{{request.hiringUser.username}}</td>
 			<td>{{request.skillKeywords.toString()}}</td>

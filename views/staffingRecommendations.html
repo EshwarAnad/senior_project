@@ -34,7 +34,11 @@
 		                                    ? recommendation.company.id.toString() === session.hiringCompany.id.toString()
 		                                    : true">
 			<td>{{recommendation.created | date : short}}</td>
-			<td>{{recommendation.active ? 'Active' : 'Inactive'}}</td>
+			<td>
+				<span class="label" ng-class="{'label-success': recommendation.active, 'label-danger': !recommendation.active}">
+					{{recommendation.active ? 'Active' : 'Inactive'}}
+				</span>
+			</td>
 			<td>{{recommendation.company.name}}</td>
 			<td>{{recommendation.request.id}}</td>
 			<td>{{recommendation.staffingUser.username}}</td>
