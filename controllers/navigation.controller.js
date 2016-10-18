@@ -46,6 +46,6 @@ function navigationController($scope, $location, $route, ROUTES, SessionService,
 
     function logout(){
         $scope.session.destroy();
-        $location.path($scope.navbar.login.path);
+        $location.path($scope.paths.LOGIN);
     }
 }

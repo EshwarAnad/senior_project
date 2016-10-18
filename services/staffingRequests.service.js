@@ -50,7 +50,7 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
 
         staffingRequests.push(staffingRequest);
 
-        HiringCompaniesService.addStaffingRequest(hiringUserObj.id, staffingRequest);
+        HiringCompaniesService.addStaffingRequest(hiringUserObj.hiringCompany.id, staffingRequest);
     }
 
     return staffingRequestService;

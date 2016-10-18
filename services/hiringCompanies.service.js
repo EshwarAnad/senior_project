@@ -38,7 +38,8 @@ function hiringCompaniesService(HiringCompaniesConstants){
             name: name,
             users: [],
             notes: [],
-            active: true
+            active: true,
+            staffingRequests: []
         };
 
         hiringCompanies.push(hiringCompany);
