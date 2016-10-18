@@ -36,7 +36,7 @@ function hiringCompaniesService(HiringCompaniesConstants){
         var hiringCompany = {
             id: id,
             name: name,
-            userIds: [],
+            users: [],
             notes: [],
             active: true
         };
