@@ -43,7 +43,9 @@ function createStaffingRequestController($rootScope, $scope, $location, Candidat
         StaffingRequestsService.create(hiringCompany,
             $rootScope.session,
             $scope.skillKeywords.split(','),
-            $scope.createdNotes);
+            $scope.createdNotes,
+            $scope.positionName,
+            $scope.openPositions);
         $location.path(ROUTES.STAFFING_REQUESTS_LIST);
     }
 }

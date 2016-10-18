@@ -31,7 +31,7 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
         return null;
     }
 
-    function create(companyObj, hiringUserObj, skillKeywordsArr, notesArr){
+    function create(companyObj, hiringUserObj, skillKeywordsArr, notesArr, positionName, openPositions){
         var id = 1000;
 
         for(var i = 0; i < staffingRequests.length; i++){
@@ -41,9 +41,11 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
         var staffingRequest = {
             id: id,
             company: companyObj,
+            positionName: positionName,
             hiringUser: hiringUserObj,
             active: true,
             skillKeywords: skillKeywordsArr,
+            openPositions: openPositions,
             notes: notesArr,
             created: new Date()
         };
