@@ -25,6 +25,18 @@
 				</h3>
 			</div>
 			<div class="panel panel-body">
+				<div class="well well-lg" ng-show="session.type === 'admin'">
+					<div class="btn-group">
+						<button class="btn btn-default"
+						        ng-click="staffingRequest.active = !staffingRequest.active">
+							{{staffingRequest.active ? 'Deactivate' : 'Activate' }}
+						</button>
+						<button class="btn btn-default" ng-click="deleteRequest()">
+							Delete
+						</button>
+					</div>
+				</div>
+				
 				<table class="table table-bordered">
 					<tbody>
 					<tr>

@@ -6,6 +6,7 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
     staffingRequestService.getAll = getAll;
     staffingRequestService.getById = getById;
     staffingRequestService.create = create;
+    staffingRequestService.deleteRequest = deleteRequest;
 
     var staffingRequests = StaffingRequestsConstant.staffingRequests;
 
@@ -53,6 +54,14 @@ function staffingRequestsService(StaffingRequestsConstant, HiringCompaniesServic
         staffingRequests.push(staffingRequest);
 
         HiringCompaniesService.addStaffingRequest(hiringUserObj.hiringCompany.id, staffingRequest);
+    }
+
+    function deleteRequest(requestObj){
+        var index = staffingRequests.indexOf(requestObj);
+
+        if(index > -1){
+            staffingRequests.splice(index, 1);
+        }
     }
 
     return staffingRequestService;
