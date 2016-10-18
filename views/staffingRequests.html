@@ -26,6 +26,9 @@
 		</thead>
 		
 		<tbody>
+		<tr ng-if="staffingRequests.length === 0">
+			<td colspan="6">No staffing requests have been created yet...</td>
+		</tr>
 		<tr ng-repeat="request in staffingRequests" ng-click="goTo(paths.STAFFING_REQUESTS_DETAIL, ':id', request.id)"
 		    class="clickable" ng-show="session.type === 'hiring'
 		                                    ? request.company.id.toString() === session.hiringCompany.id.toString()
