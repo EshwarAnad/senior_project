@@ -29,8 +29,8 @@
 						        ng-click="staffingRecommendation.active = !staffingRecommendation.active">
 							{{staffingRecommendation.active ? 'Deactivate' : 'Activate' }}
 						</button>
-						<button class="btn btn-default" ng-show="session.type === 'admin'">
-							Re-Assign Staffing User
+						<button class="btn btn-default" ng-show="session.type === 'admin'" ng-click="deleteRecommendation()">
+							Delete
 						</button>
 					</div>
 				</div>

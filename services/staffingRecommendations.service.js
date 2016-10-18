@@ -8,6 +8,7 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
     staffingRecommendationsService.create = create;
     staffingRecommendationsService.getForCandidate = getForCandidate;
     staffingRecommendationsService.updateCandidateResponse = updateCandidateResponse;
+    staffingRecommendationsService.deleteRecommendation = deleteRecommendation;
 
     var staffingRecommendations = StaffingRecommendationsConstant.staffingRecommendations;
 
@@ -135,6 +136,14 @@ function staffingRecommendationsService(StaffingRecommendationsConstant, $rootSc
         }
 
         return recommendation;
+    }
+
+    function deleteRecommendation(recommendation){
+        var index = staffingRecommendations.indexOf(recommendation);
+
+        if(index > -1){
+            staffingRecommendations.splice(index, 1);
+        }
     }
 
     return staffingRecommendationsService;

@@ -13,7 +13,14 @@ function staffingRecommendationController($scope, ROUTES, $location, staffingRec
         }
     }
 
+    $scope.deleteRecommendation = deleteRecommendation;
     $scope.goTo = goTo;
+
+    function deleteRecommendation(){
+        StaffingRecommendationsService.deleteRecommendation($scope.staffingRecommendation);
+
+        $location.path(ROUTES.STAFFING_RECOMMENDATIONS_LIST);
+    }
 
     function goTo(path){
         $location.path(path);
