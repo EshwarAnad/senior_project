@@ -94,7 +94,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
         user.candidateInfo = candidate;
     }
 
-    function modifyUserCandidate(userId, password, firstName, lastName, skills, status){
+    function modifyUserCandidate(userId, password, firstName, lastName, skills, status, income, location){
         console.log(candidates);
         var user = getUserById(userId);
 
@@ -106,6 +106,8 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
 
         candidate.skills = skills;
         candidate.status = status;
+        candidate.income = income;
+        candidate.location = location;
 
         user.candidateInfo = candidate;
         candidate.user = user;

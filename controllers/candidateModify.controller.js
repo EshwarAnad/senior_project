@@ -11,7 +11,7 @@ function candidateModifyController(candidateId, $scope, $location, ROUTES, Candi
     function update(){
         CandidateUserService.modifyUserCandidate($scope.candidateUser.id, $scope.candidateUser.password,
                     $scope.candidateUser.firstName, $scope.candidateUser.lastName, $scope.candidateUser.candidateInfo.skills,
-                    $scope.candidateUser.candidateInfo.status);
+                    $scope.candidateUser.candidateInfo.status,  $scope.candidateUser.candidateInfo.income,  $scope.candidateUser.candidateInfo.location);
 
         $location.path(ROUTES.CANDIDATES_DETAIL.replace(":id", candidateId));
     }
