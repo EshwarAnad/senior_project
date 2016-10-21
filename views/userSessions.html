@@ -29,7 +29,7 @@
 					<td>{{userSession.emailAddress}}</td>
 					<td>{{userSession.hiringCompany.name || 'NONE'}}</td>
 					<td>
-						<button class="btn btn-primary btn-sm btn-block">
+						<button class="btn btn-primary btn-sm btn-block" ng-click="suspend(userSession)">
 							Suspend Session
 						</button>
 					</td>

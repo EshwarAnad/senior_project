@@ -3,6 +3,15 @@ angular.module('tps').controller('UserSessionsCtrl', userSessionsController);
 function userSessionsController($scope){
     $scope.title = 'Current User Sessions';
 
+    $scope.suspend = suspend;
+
+    function suspend(userSession){
+        var index = $scope.sessions.indexOf(userSession);
+        if(index > -1){
+            $scope.sessions.splice(index, 1);
+        }
+    }
+
     $scope.sessions = [
         {
             id: 1002,
