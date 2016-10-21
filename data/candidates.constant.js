@@ -62,7 +62,9 @@ angular.module('tps').constant('CandidatesConstants', {
 
                     ]
                 }
-            }
+            },
+            income: 45000,
+            location: 'Chicago, IL, United States'
         },
         {
             id: 1001,
@@ -84,7 +86,9 @@ angular.module('tps').constant('CandidatesConstants', {
                 hiringCompany: null,
                 emailAddress: 'elonMusk@teslamotors.com',
                 password: 'password1234'
-            }
+            },
+            income: 1000000,
+            location: 'Huntington Beach, California, United States'
         },
         {
             id: 1002,
@@ -106,7 +110,9 @@ angular.module('tps').constant('CandidatesConstants', {
                 hiringCompany: null,
                 emailAddress: 'ccandidate@gmail.com',
                 password: 'password1234'
-            }
+            },
+            income: 230000,
+            location: 'Charlotte, North Carolina, United States'
         },
         {
             id: 1003,
@@ -143,7 +149,9 @@ angular.module('tps').constant('CandidatesConstants', {
                 hiringCompany: null,
                 emailAddress: 'ccandidate@gmail.com',
                 password: 'password1234'
-            }
+            },
+            income: 33000,
+            location: 'Columbus, Ohio, United States'
         }
     ]
 });
