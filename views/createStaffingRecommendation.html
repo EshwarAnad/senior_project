@@ -16,9 +16,10 @@
 	<table class="table table-bordered table-hover">
 		<thead>
 		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Employment Status</th>
+			<th>Company Name</th>
+			<th>Requested By</th>
+			<th># of Open Positions</th>
+			<th>Skills Looking For</th>
 		</tr>
 		</thead>
 		
@@ -27,6 +28,7 @@
 		    ng-click="select(staffingRequest)">
 			<td>{{staffingRequest.company.name}}</td>
 			<td>{{staffingRequest.hiringUser.firstName + staffingRequest.hiringUser.lastName}}</td>
+			<td>{{staffingRequest.openPositions}}</td>
 			<td>{{staffingRequest.skillKeywords.toString()}}</td>
 		</tr>
 		<tr ng-show="staffingRequests.length === 0">

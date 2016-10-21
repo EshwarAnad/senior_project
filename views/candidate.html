@@ -14,6 +14,7 @@
 		<div class="form-group" ng-show="session.type === 'staffing' || session.type === 'admin'">
 			<div class="btn-group btn-lg">
 				<button class="btn btn-primary" ng-click="modifyCandidate()">Modify Candidate</button>
+				<button class="btn btn-default" ng-show="session.type === 'admin'">Delete Candidate</button>
 			</div>
 		</div>
 	</div>
