@@ -47,6 +47,6 @@ angular.module('tps').controller('CandidateCtrl', function($scope, candidateId, 
     }
 
     function modifyCandidate(){
-        $location.path(ROUTES.CANDIDATES_MODIFY.replace(":id", candidateId))
+        $location.path(ROUTES.CANDIDATES_MODIFY.replace(":id", $scope.candidate.id))
     }
 });

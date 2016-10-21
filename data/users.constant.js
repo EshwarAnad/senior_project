@@ -154,7 +154,7 @@ angular.module('tps').constant('UsersConstants', {
             }
         },
         {
-            id: 1006,
+            id: 1007,
             username: 'andysterks',
             firstName: 'Andy',
             lastName: 'Sterkowitz',

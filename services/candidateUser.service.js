@@ -79,7 +79,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
     function getCandidateUser(candidateId){
         var candidate = getCandidateById(candidateId);
 
-        var user = getUserById(candidateId);
+        var user = getUserById(candidate.user.id);
         candidate.user = user;
         user.candidateInfo = candidate;
 

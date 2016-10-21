@@ -27,14 +27,41 @@ angular.module('tps').constant('CandidatesConstants', {
 
             ],
             user: {
-                id: 1006,
+                id: 1007,
                 username: 'andysterks',
                 firstName: 'Andy',
                 lastName: 'Sterkowitz',
                 type: 'candidate',
                 hiringCompany: null,
                 emailAddress: 'andys@gmail.com',
-                password: 'password1234'
+                password: 'password1234',
+                candidateInfo: {
+                    id: 1000,
+                    skills: 'C#, AngularJS, Javascript',
+                    status: 'UnemployedJobSearching',
+                    notes: [
+
+                    ],
+                    privateNotes: [
+                        {
+                            content: 'An awesome candidate!  He should get hired somewhere...',
+                            author: {
+                                id: 1001,
+                                username: 'sallystaffer',
+                                firstName: 'Sally',
+                                lastName: 'Staffer',
+                                type: 'staffing',
+                                hiringCompany: null,
+                                emailAddress: 'sally@tpsstaffing.com',
+                                password: 'password1234'
+                            },
+                            created: new Date(2016, 8, 7, 11, 17, 11, 13)
+                        }
+                    ],
+                    recommendations: [
+
+                    ]
+                }
             }
         },
         {
