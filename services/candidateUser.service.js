@@ -150,7 +150,7 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
         return null;
     }
 
-    function createCandidate(username, password, firstName, lastName, skills, status){
+    function createCandidate(username, password, firstName, lastName, skills, status, income, location){
         var id = 1000;
 
         for(var i = 0; i < candidates.length; i++){
@@ -167,7 +167,9 @@ function candidateUserService(CandidatesConstants, UsersConstants, HiringCompani
             notes: [],
             privateNotes: [],
             recommendations: [],
-            user: user
+            user: user,
+            income: income ||  0,
+            location: location || ''
         };
 
         addCandidateEntityToUser(user.id, candidate);
