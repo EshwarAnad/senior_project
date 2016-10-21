@@ -172,6 +172,10 @@ angular.module('tps', ['ngRoute', 'tps.ROUTES'])
                     }
                 }
             })
+            .when(ROUTES.USER_SESSIONS, {
+                controller: 'UserSessionsCtrl',
+                templateUrl: 'views/userSessions.html'
+            })
     });
 
 angular.module('tps.ROUTES', [])
@@ -200,5 +204,6 @@ angular.module('tps.ROUTES', [])
         USER_DETAIL: '/user/:id',
         USER_LIST: '/users',
         USER_CREATE: '/users/create',
-        USER_MODIFY: '/users/modify/:id'
+        USER_MODIFY: '/users/modify/:id',
+        USER_SESSIONS: '/sessions/'
     });
